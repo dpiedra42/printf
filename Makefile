@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+         #
+#    By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/04 11:36:56 by dpiedra           #+#    #+#              #
-#    Updated: 2019/12/04 13:28:27 by dpiedra          ###   ########.fr        #
+#    Updated: 2020/01/08 18:18:07 by deannapiedr      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	libprintf.a
+NAME	=	libftprintf.a
 
 RM		=	rm -f
 
@@ -18,16 +18,16 @@ CFLAGS	= 	-Wall -Wextra -Werror
 
 CC		=	gcc
 
-HEADER	=	libprintf.h
+HEADER	=	printf.h
 
-SRCS	=
+SRCS	=	ft_printf.c 
 
 OBJ		=	$(SRCS:.c=.o)
 
 all		:	$(NAME)
 
 $(NAME)	:	$(OBJ)
-			$(CC) $((SRCS) libprintf.h $(CFLAGS) 
+			$(CC) $((SRCS) libftprintf.h $(CFLAGS) 
 			ar -rcs $(NAME) $(OBJ) $(HEADER)
 
 .PHONY	:	clean fclean re
