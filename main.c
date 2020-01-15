@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:59:02 by deannapiedr       #+#    #+#             */
-/*   Updated: 2020/01/15 12:24:00 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/15 15:18:16 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main()
 {
-    printf("|%.*s|", 25, "hello world");
+    printf("%s", "hello there");
     return (0);
 }
