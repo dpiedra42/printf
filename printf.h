@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 18:29:58 by deannapiedr       #+#    #+#             */
-/*   Updated: 2020/01/15 15:18:32 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/15 15:55:04 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct		s_list
 }					t_list;
 
 int ft_printf(const char *, ...);
+int	ft_printchar(char c, int rtn);
 int	ft_isdigit(int c);
 
 #endif

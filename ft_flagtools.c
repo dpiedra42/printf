@@ -6,13 +6,21 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 14:47:31 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/15 15:12:49 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/15 17:15:28 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-// if ((ft_isdigit(str[i] == 1) || str[i] == '-' || str[i] == "." || str[i] == "*")
-// {
-// 	if 
-// }
+int	ft_isflag(char c)
+{
+	if (ft_isdigit(c) == 1 || c == '.' || c == '*' || c == '-')
+		return (1);
+	else
+		return (0);
+}
+
+int	ft_findflag(char input)
+{
+	
+}
