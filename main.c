@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
+/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:59:02 by deannapiedr       #+#    #+#             */
-/*   Updated: 2020/01/08 17:54:40 by deannapiedr      ###   ########.fr       */
+/*   Updated: 2020/01/15 12:24:00 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main()
 {
-    printf("hello world \n%d\n", 9);
+    printf("|%.*s|", 25, "hello world");
     return (0);
 }

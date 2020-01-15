@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
+/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 18:29:58 by deannapiedr       #+#    #+#             */
-/*   Updated: 2019/12/13 18:32:54 by deannapiedr      ###   ########.fr       */
+/*   Updated: 2020/01/15 10:51:57 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stdarg.h>
+# include <unistd.h>
 
 int ft_printf(const char *, ...);
 
