@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 14:47:31 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/16 15:06:09 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/16 15:28:18 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 t_list	ft_start_flags(t_list flags)
 {
 	flags.zero = 0;
-	flags.minimum = 0;
 	flags.minus = 0;
 	flags.width = 0;
 	flags.period = -1;
@@ -31,28 +30,32 @@ int		ft_isflag(char c)
 		return (0);
 }
 
-t_list	ft_assign_flag(char s, t_list flags)
+t_list	ft_assign_flag(const char *str, t_list flags)
 {
-	int i;
-
-	i = 0;
-	if ((ft_isdigit(s) == 1) && s == '0')
-		flags.zero = 1;
-	else if (ft_isdigit(s) == 1)
-		flags.minimum = s;
-	else if (s == '-')
-		flags.minus = 1;
-	else if (s == '*')
-		flags.width = 1;
-	else if (s == '.')
-		flags.period = 1;
-	else if (s == '.' && s == '*')
-		flags.precision = 1;
+	if ((ft_isdigit(*str) == 1) || *str == '0')
+	{
+		if (*str == '0')
+			str++;
+		while (*str >= '0' && *str <= '9')
+		{
+			flags.zero = flags.zero * 10 + *str - '0';
+			str++;
+		}
+	}
+	// else if (*str == '-')
+	// 	flags.minus = 1;
+	// else if (*str == '*')
+	// 	flags.width = 1;
+	// else if (*str == '.')
+	// 	flags.period = 1;
+	// else if (*str == '.' && *str == '*')
+	// 	flags.precision = 1;
 	return (flags);
 }
 
 t_list	ft_make_flags(const char *str, t_list flags, va_list args)
 {
-	flags = ft_assign_flag(*str, flags);
+	flags = ft_assign_flag(str, flags);
+	printf("\n%d\n", flags.zero);
 	return (flags);
 }

@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:49:21 by deannapiedr       #+#    #+#             */
-/*   Updated: 2020/01/16 15:06:13 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/16 15:28:19 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("hello %10d", 42);
+	ft_printf("hello %29d", 42);
 	return (0);
 }
