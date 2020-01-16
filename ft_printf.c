@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:49:21 by deannapiedr       #+#    #+#             */
-/*   Updated: 2020/01/16 10:27:43 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/16 11:01:52 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_putchar(char c, int rtn)
 int	ft_printf(const char *str, ...)
 {
 	va_list args;
+	t_list	flags;
 	int		i;
 	int		rtn;
 
@@ -35,8 +36,9 @@ int	ft_printf(const char *str, ...)
 		else if (str[i] == '%' && str[i + 1] != '\0')
 		{
 			i++;
+			ft_startflags(flags);
 			if (ft_isflag(str[i]) == 1)
-				ft_findflag(str[i]);
+				// ft_findflag(str[i]);
 		}
 		i++;
 	}
