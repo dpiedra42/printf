@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/16 17:45:32 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/16 18:09:00 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct	s_list
 	int	zero;
 	int minus;
 	int width;
+	int asterisk;
 	int period;
 	int precision;
 }				t_list;
