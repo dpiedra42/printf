@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 18:29:58 by deannapiedr       #+#    #+#             */
-/*   Updated: 2020/01/16 11:00:36 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/16 11:25:05 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ typedef struct	s_list
 	int precision;
 }				t_list;
 
-int ft_printf(const char *, ...);
-int	ft_putchar(char c, int rtn);
-t_list	ft_startflags(flags);
-int	ft_isflag(char c);
-int	ft_isdigit(int c);
+int		ft_printf(const char *, ...);
+int		ft_putchar(char c, int rtn);
+t_list	ft_startflags(t_list flags);
+int		ft_isflag(char c);
+t_list	ft_findflag(char c, t_list flags);
+int		ft_isdigit(int c);
 
 #endif

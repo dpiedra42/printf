@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:59:02 by deannapiedr       #+#    #+#             */
-/*   Updated: 2020/01/16 10:15:44 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/16 11:22:12 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main()
 {
-    ft_printf("hello");
-    printf( "%d \n", 32);
+    printf( "%d \n%d \n", 32, 4);
     return (0);
 }

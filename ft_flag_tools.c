@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 14:47:31 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/16 11:01:53 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/16 11:25:14 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,9 @@ int	ft_isflag(char c)
 		return (1);
 	else
 		return (0);
+}
+
+t_list	ft_findflag(char c, t_list flags)
+{
+	
 }
