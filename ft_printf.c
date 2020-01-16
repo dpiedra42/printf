@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:49:21 by deannapiedr       #+#    #+#             */
-/*   Updated: 2020/01/15 17:14:51 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/16 10:27:43 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_printf(const char *str, ...)
 		else if (str[i] == '%' && str[i + 1] != '\0')
 		{
 			i++;
-			if (ft_isflag(str[i] == 1))
+			if (ft_isflag(str[i]) == 1)
 				ft_findflag(str[i]);
 		}
 		i++;
