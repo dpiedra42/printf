@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/16 17:15:41 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/16 17:58:39 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ int	ft_printf(const char *str, ...)
 		{
 			str++;
 			flags = ft_start_flags(flags);
-			if (ft_isflag(*str) == 1)
-				flags = ft_make_flags(str, flags, args);
+			flags = ft_make_flags(str, flags, args);
+			while (ft_isflag(*str) == 1)
+				str++;
 		}
 		str++;
 	}
