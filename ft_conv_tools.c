@@ -6,11 +6,16 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/17 12:25:55 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/17 13:38:04 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+
+ft_treat_c(va_list args, t_list flags)
+{
+	if (flags.minus == 1)
+}
 
 int	ft_find_conv(const char *str, va_list args, t_list flags)
 {
