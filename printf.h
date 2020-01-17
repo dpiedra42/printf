@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/17 12:18:05 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/17 15:11:29 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int		ft_isflag(char c);
 t_list	ft_make_flags(const char *str, t_list flags, va_list args);
 t_list	ft_sort_flag(char c, t_list flags, va_list args);
 int		ft_isdigit(int c);
-int		ft_find_conv(const char *str, va_list args, t_list flags);
+void	ft_find_conv(const char *str, va_list args, t_list flags);
+void	ft_treat_cflags(va_list args, t_list flags);
+void	ft_c_asterisk(va_list args, t_list flags, int value);
 
 #endif
