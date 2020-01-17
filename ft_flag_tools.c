@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/17 10:42:42 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/17 11:17:20 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,17 @@ t_list	ft_sort_flag(char c, t_list flags, va_list args)
 	if (c == '.')
 		flags.period = 0;
 	if (c == '*' && flags.period == 0)
+	{
 		flags.precision = 0;
+		flags.width = va_arg(args, int);
+		printf("\n%d\n", flags.width);
+	}
 	else if (c == '*')
+	{
 		flags.asterisk = 1;
+		flags.width = va_arg(args, int);
+		printf("\n%d\n", flags.width);
+	}
 	return (flags);
 }
 
