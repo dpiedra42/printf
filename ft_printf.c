@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/17 12:14:05 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/17 14:00:12 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	main(void)
 	char c;
 
 	c = 'd';
-	ft_printf("hello %c", c);
+	ft_printf("my function   :hello %-12c\n", c);
+	printf("real function :hello %-12c", c);
 	return (0);
 }
