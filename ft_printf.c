@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 16:10:00 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 16:17:32 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,27 +51,13 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	char c;
+	char	c;
+	int		a;
+	int		b;
 
 	c = 'd';
-	int a;
-	int b;
 	a = ft_printf("1 : |%2c|\n", c);
 	b = printf("1 : |%2c|\n", c);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// ft_printf("2 : |%-c|\n", c);
-	// printf("2 : |%-c|\n", c);
-	// ft_printf("3 : |%-12c|\n", c);
-	// printf("3 : |%-12c|\n", c);
-	// ft_printf("4 : |%*c|\n", 5, c);
-	// printf("4 : |%*c|\n", 5, c);
-	// ft_printf("5 : |%------c|\n", c);
-	// printf("5 : |%------c|\n", c);
-	// ft_printf("6 : |%-----5c|\n", c);
-	// printf("6 : |%-----5c|\n", c);
-	// ft_printf("7 : |%7c|\n", c);
-	// printf("7 : |%7c|\n", c);
-	// ft_printf("8 : |%-10*c|\n", 5, c);
-	// printf("8 : |%-10*c|\n", 5, c);
 	return (0);
 }
