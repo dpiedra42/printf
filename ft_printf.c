@@ -6,13 +6,13 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 12:00:44 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 14:56:43 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_putchar(char c, int rtn)
+int	ft_new_putchar(char c, int rtn)
 {
 	if (c != '%' && c != '\0')
 	{
@@ -34,7 +34,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (*str != '\0')
 	{
-		rtn = ft_putchar(*str, rtn);
+		rtn = ft_new_putchar(*str, rtn);
 		if (*str == '%' && *str + 1 != '\0')
 		{
 			str++;
@@ -42,7 +42,7 @@ int	ft_printf(const char *str, ...)
 			flags = ft_make_flags(str, flags, args);
 			while (ft_isflag(*str) == 1)
 				str++;
-			rtn += ft_find_conv(str, args, flags, rtn);
+			rtn += ft_find_conv(str, args, flags);
 		}
 		str++;
 	}
@@ -54,7 +54,7 @@ int	main(void)
 	char c;
 
 	c = 'd';
-	ft_printf("my function  : hello %cm\n", 12, c);
-	printf("real function: hello %*cm\n", 12, c);
+	ft_printf("my function  :%-5cm\n", c);
+	printf("real function:%-5cm\n", c);
 	return (0);
 }

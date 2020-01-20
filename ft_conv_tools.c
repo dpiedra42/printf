@@ -6,16 +6,34 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 11:59:20 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 14:56:30 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_find_conv(const char *str, va_list args, t_list flags, int rtn)
+int	ft_fix_field(int flag, char c)
 {
+	int rtn;
+
+	rtn = 0;
+	if (flag == 0)
+		return (rtn);
+	while (flag != 0)
+	{
+		write(1, &c, 1);
+		flag--;
+		rtn++;
+	}
+	return (rtn);
+}
+
+int	ft_find_conv(const char *str, va_list args, t_list flags)
+{
+	int rtn;
+
 	if (*str == 'c')
-		rtn = ft_treat_cflags(args, flags);
+		rtn = ft_c_flags(args, flags);
 	// if (*str == 's')
 	// {
 	// }
@@ -31,4 +49,5 @@ int	ft_find_conv(const char *str, va_list args, t_list flags, int rtn)
 	// if (*str == 'x' || *str == 'X')
 	// {
 	// }
+	return (rtn);
 }

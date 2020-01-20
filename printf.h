@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 11:59:58 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 14:28:22 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,23 @@
 typedef struct	s_list
 {
 	int	zero;
-	int minus;
-	int width;
-	int period;
-	int precision;
+	int	minus;
+	int	width;
+	int	period;
+	int	precision;
 }				t_list;
 
 int		ft_printf(const char *, ...);
-int		ft_putchar(char c, int rtn);
+int		ft_new_putchar(char c, int rtn);
 t_list	ft_start_flags(t_list flags);
-int		ft_isflag(char c);
 t_list	ft_make_flags(const char *str, t_list flags, va_list args);
+int		ft_isflag(char c);
 t_list	ft_sort_flag(char c, t_list flags, va_list args);
 int		ft_isdigit(int c);
-int		ft_find_conv(const char *str, va_list args, t_list flags, int rtn);
-int		ft_treat_cflags(va_list args, t_list flags);
-void	ft_c_asterisk(va_list args, t_list flags, int value);
+t_list	ft_arg_flags(char c, t_list flags, va_list args);
+int		ft_find_conv(const char *str, va_list args, t_list flags);
+int		ft_c_flags(va_list args, t_list flags);
+void	ft_putchar_fd(char c, int fd);
+int		ft_fix_field(int flag, char c);
 
 #endif

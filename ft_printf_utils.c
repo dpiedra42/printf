@@ -6,13 +6,13 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:06 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/17 11:02:45 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 14:06:27 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_isdigit(int c)
+int		ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
@@ -20,10 +20,15 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-int	ft_isflag(char c)
+int		ft_isflag(char c)
 {
 	if (ft_isdigit(c) == 1 || c == '.' || c == '*' || c == '-')
 		return (1);
 	else
 		return (0);
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
