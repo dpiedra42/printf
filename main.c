@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:20 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 14:23:18 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 15:54:53 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,25 @@ int main()
 {
     char c;
 
-    c = 'e';
-    printf("CONVERSION DE CHAR (c)\n");
-    printf("1 : %3cm\n", c);
-    printf("2 : %-cm\n", c);
-    printf("3 : %-12cm\n", c);
-    printf("4 : %0cm\n", c);
-    printf("5 : %05cm\n", c);
-    printf("6 : %*5cm\n", 5, c);
-    printf("7 : %*cm\n", c);
-    printf("8 : %.10cm\n", c);
-    printf("9 : %.cm\n", c);
-    printf("10 : %.*cm\n", 5, c);
+	c = 'd';
+	ft_printf("1 : %c\n", c);
+	printf("1 : %c\n", c);
+	ft_printf("2 : %-c\n", c);
+	printf("2 : %-c\n", c);
+	ft_printf("3 : %-12c\n", c);
+	printf("3 : %-12c\n", c);
+	ft_printf("4 : %*c\n", 5, c);
+	printf("4 : %*c\n", 5, c);
+	ft_printf("5 : %------c\n", c);
+	printf("5 : %------c\n", c);
+	ft_printf("6 : %-----5c\n", c);
+	printf("6 : %-----5c\n", c);
+	ft_printf("7 : %7c\n", c);
+	printf("7 : %7c\n", c);
+	ft_printf("8 : %-10*c\n", 5, c);
+	printf("8 : %-10*c\n", 5, c);
+	ft_printf("9 : %0c\n", c);
+	printf("9 : %0c\n", c);
     return (0);
 }
 
@@ -42,29 +49,62 @@ int main()
 // ​
 //     c = 'd';
 //     str = "test printf";
+//     int a = 12;
 //     deci = 12;
 //     unsi = 10;
 //     hexa = 1;
 //     uhexa = 5;
 // ​
 //     printf("CONVERSION DE CHAR (c)\n");
-//     printf("1 : %c\n", c);
-//     printf("2 : %-c\n", c);
-//     printf("3 : %-12c\n", c);
-//     printf("4 : %*c\n", 5, c);
-//     printf("5 : %------c\n", c);
-//     printf("6 : %-----5c\n", c);
-//     printf("7 : %7c\n", c);
-//     printf("8 : %-10*c\n", 5, c);
-//     printf("9 : %0c\n\n", c);
+//      ft_printf("1 : %c\n", c);
+//      printf("1 : %c\n", c);
+//      ft_printf("2 : %-c\n", c);
+//      printf("2 : %-c\n", c);
+//      ft_printf("3 : %-12c\n", c);
+//      printf("3 : %-12c\n", c);
+//      ft_printf("4 : %*c\n", 5, c);
+//      printf("4 : %*c\n", 5, c);
+//      ft_printf("5 : %------c\n", c);
+//      printf("5 : %------c\n", c);
+//      ft_printf("6 : %-----5c\n", c);
+//      printf("6 : %-----5c\n", c);
+//      ft_printf("7 : %7c\n", c);
+//      printf("7 : %7c\n", c);
+//      ft_printf("8 : %-10*c\n", 5, c);
+//      printf("8 : %-10*c\n", 5, c);
+//      ft_printf("9 : %0c\n", c);
+//      printf("9 : %0c\n", c);
 // ​
 //     printf("CONVERSION DE STRING (s)\n");
 //     printf("1 : %s\n", str);
-//     printf("2 : %-12s\n", str); //la justification debute des le premier char
+//     printf("2 : %-12s\n", str);
 //     printf("3 : %.s\n", str);
 //     printf("4 : %.4s\n", str);
 //     printf("5 : %*s\n", 20, str);
-//     printf("6 : %4s\n\n", str);
+//     printf("6 : %12s\n", str);
+//     printf("7 : %015s\n", str);
+//     printf("8 : %.14s\n", str);
+//     printf("9 : %.017s\n", str);
+//     printf("10 : %*s\n", 15, str);
+//     printf("11 : %15s\n", str);
+//     printf("12 : %0s\n", str);
+//     printf("13 : %.0s\n\n", str);
+// ​
+//     printf("CONVERSION DE POINTEUR (p)\n");
+//     printf("1 : %p\n", &str);
+//     printf("2 : %-p\n", &str);
+//     printf("3 : %-45p\n", &str);
+//     printf("4 : %45p\n", &str);
+//     printf("5 : %045p\n", &str);
+//     printf("6 : %.45p\n", &str);
+//     printf("7 : %*p\n", 15, &str);
+//     printf("8 : %0p\n", &str);
+//     printf("9 : %.0p\n", &str);
+//     printf("10 : %-------p\n", &str);
+//     printf("11 : %-----45p\n", &str);
+//     printf("12 : %-45*p\n", 12, &str);
+//     printf("13 : %p\n", &a);
+//     printf("14 : %p\n\n", &deci);
 // ​
 //     printf("CONVERSION D'ENTIER RELATIF (d, i)\n");
 //     printf("1 : %d\n", deci);
@@ -74,7 +114,8 @@ int main()
 //     printf("5 : %04d\n", deci);
 //     printf("6 : %.12d\n", deci);
 //     printf("7 : %.0d\n", deci);
-//     printf("8 : %*d\n\n", 5, deci);
+//     printf("8 : %*d\n", 5, deci);
+//     printf("9 : %*d\n\n", 5, deci);
 // ​
 //     printf("1bis : %i\n", deci);
 //     printf("2bis : %-i\n", deci);

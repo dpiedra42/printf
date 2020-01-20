@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 12:06:47 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 15:55:11 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,10 @@ t_list	ft_make_flags(const char *str, t_list flags, va_list args)
 		flags = ft_sort_flag(str[i], flags, args);
 		i++;
 	}
-	return (flags);
-}
-
 	// printf("\n%d\n", flags.zero);
 	// printf("\n%d\n", flags.minus);
 	// printf("\n%d\n", flags.width);
 	// printf("\n%d\n", flags.period);
 	// printf("\n%d\n", flags.precision);
+	return (flags);
+}
