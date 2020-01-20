@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 16:32:38 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 17:10:39 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_fix_field(int flag, char c)
 		return (rtn);
 	while (flag != 0)
 	{
-		write(1, &c, 1);
+		ft_putchar_fd(c, 1);
 		flag--;
 		rtn++;
 	}
@@ -35,7 +35,7 @@ int	ft_find_conv(const char *str, va_list args, t_list flags)
 	if (*str == 'c')
 		rtn = ft_c_conv(args, flags);
 	if (*str == 's')
-		rtn = ft_s_conv(args, flags);
+		rtn = ft_str_conv(args, flags);
 
 	return (rtn);
 }

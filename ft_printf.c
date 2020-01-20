@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 16:17:32 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 17:10:50 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	main(void)
 	int		b;
 
 	c = 'd';
-	a = ft_printf("1 : |%2c|\n", c);
-	b = printf("1 : |%2c|\n", c);
+	a = ft_printf("|%s|\n", "hello");
+	b = printf("|%s|\n", "hello");
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }

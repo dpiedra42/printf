@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:20 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 16:17:42 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 17:10:48 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,24 @@
 int main()
 {
     char c;
+	char *str;
 
 	c = 'd';
-	ft_printf("1 : %c\n", c);
-	printf("1 : %c\n", c);
-	ft_printf("2 : %-c\n", c);
-	printf("2 : %-c\n", c);
-	ft_printf("3 : %-12c\n", c);
-	printf("3 : %-12c\n", c);
-	ft_printf("4 : %*c\n", 5, c);
-	printf("4 : %*c\n", 5, c);
-	ft_printf("5 : %------c\n", c);
-	printf("5 : %------c\n", c);
-	ft_printf("6 : %-----5c\n", c);
-	printf("6 : %-----5c\n", c);
-	ft_printf("7 : %7c\n", c);
-	printf("7 : %7c\n", c);
-	ft_printf("8 : %-10*c\n", 5, c);
-	printf("8 : %-10*c\n", 5, c);
-	ft_printf("9 : %0c\n", c);
-	printf("9 : %0c\n", c);
+	str = "test printf";
+	printf("CONVERSION DE STRING (s)\n");
+	printf("1 : %s\n", str);
+    printf("2 : %-12s\n", str);
+    printf("3 : %.s\n", str);
+    printf("4 : %.4s\n", str);
+    printf("5 : %*s\n", 20, str);
+    printf("6 : %12s\n", str);
+    printf("7 : %015s\n", str);
+    printf("8 : %.14s\n", str);
+    printf("9 : %.017s\n", str);
+    printf("10 : %*s\n", 15, str);
+    printf("11 : %15s\n", str);
+    printf("12 : %0s\n", str);
+    printf("13 : %.0s\n\n", str);
     return (0);
 }
 
