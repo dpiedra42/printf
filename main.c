@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:20 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/17 14:52:17 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 10:16:54 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int main()
 
     c = 'e';
     printf("CONVERSION DE CHAR (c)\n");
-    printf("1 : %c\n", c);
-    printf("2 : %-c\n", c);
-    printf("3 : %-12c\n", c);
-    printf("4 : %*c\n", 5, c);
-    printf("5 : %------c\n", c);
-    printf("6 : %-----5c\n", c);
+    // printf("1 : %c\n", c);
+    // printf("2 : %-c\n", c);
+    // printf("3 : %-12c\n", c);
+    // printf("4 : %*c\n", 5, c);
+    // printf("5 : %------c\n", c);
+    // printf("6 : %-----5c\n", c);
     printf("7 : %7c\n", c);
     printf("8 : %-10*c\n", 5, c);
     printf("9 : %0c\n", c);
