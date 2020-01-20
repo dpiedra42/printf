@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 10:15:50 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 12:00:44 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_printf(const char *str, ...)
 			flags = ft_make_flags(str, flags, args);
 			while (ft_isflag(*str) == 1)
 				str++;
-			ft_find_conv(str, args, flags);
+			rtn += ft_find_conv(str, args, flags, rtn);
 		}
 		str++;
 	}

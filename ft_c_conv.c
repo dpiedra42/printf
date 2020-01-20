@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 12:20:52 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 10:15:59 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 12:01:04 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,12 @@ void	ft_c_asterisk(va_list args, t_list flags, int value)
 		write(1, &value, 1);
 }
 
-void	ft_treat_cflags(va_list args, t_list flags)
+int		ft_treat_cflags(va_list args, t_list flags)
 {
 	int value;
 
 	if (flags.minus == 1 && flags.width >= 0)
 		ft_c_minus(args, flags, value);
-	else if (flags.asterisk == 1)
-		ft_c_asterisk(args, flags, value);
 	else
 	{
 		value = va_arg(args, int);
