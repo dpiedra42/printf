@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 16:19:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 16:30:40 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 16:33:59 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,9 @@
 
 int	ft_str_conv(va_list args, t_list flags)
 {
+	int rtn;
+	char *str;
+
+	rtn = 0;
+	
 }
