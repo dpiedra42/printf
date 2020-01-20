@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_c_conv.c                                        :+:      :+:    :+:   */
+/*   ft_char.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 12:20:52 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 15:25:35 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 15:59:30 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		ft_c_flags(va_list args, t_list flags)
+int		ft_c_conv(va_list args, t_list flags)
 {
 	int		value;
 	int		rtn;
