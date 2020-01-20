@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 15:59:40 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/20 16:20:46 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int		ft_find_conv(const char *str, va_list args, t_list flags);
 int		ft_c_conv(va_list args, t_list flags);
 void	ft_putchar_fd(char c, int fd);
 int		ft_fix_field(int flag, char c);
+int		ft_str_conv(va_list args, t_list flags);
 
 #endif
