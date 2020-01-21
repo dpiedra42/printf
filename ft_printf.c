@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/20 17:10:50 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/21 11:59:58 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,11 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	char	c;
 	int		a;
 	int		b;
 
-	c = 'd';
-	a = ft_printf("|%s|\n", "hello");
-	b = printf("|%s|\n", "hello");
+	a = ft_printf("|%.*s|\n", 10, "hello");
+	b = printf("|%.*s|\n", 10, "hello");
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
