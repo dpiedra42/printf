@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:20 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/21 15:05:47 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/21 15:14:00 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int     main()
 {
-    char c;
+    // char c;
     char *str; 
     int a;
     int b;
@@ -23,35 +23,35 @@ int     main()
     // int hexa; 
     // unsigned int uhexa;
     
-    c = 'd';
+    // c = 'd';
     str = "test printf";
     // int i = 12;
     // deci = 12;
     // unsi = 10;
     // hexa = 1;
     // uhexa = 5;
-    printf("CONVERSION DE CHAR (c)\n");
-     ft_printf("1 : %c\n", c);
-     printf("1 : %c\n", c);
-     ft_printf("2 : %-c\n", c);
-     printf("2 : %-c\n", c);
-     ft_printf("3 : %-12c\n", c);
-     printf("3 : %-12c\n", c);
-     ft_printf("4 : %*c\n", 5, c);
-     printf("4 : %*c\n", 5, c);
-     ft_printf("5 : %------c\n", c);
-     printf("5 : %------c\n", c);
-     ft_printf("6 : %-----5c\n", c);
-     printf("6 : %-----5c\n", c);
-     ft_printf("7 : %7c\n", c);
-     printf("7 : %7c\n", c);
-     ft_printf("8 : %-10*c\n", 5, c);
-     printf("8 : %-10*c\n", 5, c);
-     ft_printf("9 : %0c\n", c);
-     printf("9 : %0c\n\n", c);
+    // printf("CONVERSION DE CHAR (c)\n");
+    //  ft_printf("1 : %c\n", c);
+    //  printf("1 : %c\n", c);
+    //  ft_printf("2 : %-c\n", c);
+    //  printf("2 : %-c\n", c);
+    //  ft_printf("3 : %-12c\n", c);
+    //  printf("3 : %-12c\n", c);
+    //  ft_printf("4 : %*c\n", 5, c);
+    //  printf("4 : %*c\n", 5, c);
+    //  ft_printf("5 : %------c\n", c);
+    //  printf("5 : %------c\n", c);
+    //  ft_printf("6 : %-----5c\n", c);
+    //  printf("6 : %-----5c\n", c);
+    //  ft_printf("7 : %7c\n", c);
+    //  printf("7 : %7c\n", c);
+    //  ft_printf("8 : %-10*c\n", 5, c);
+    //  printf("8 : %-10*c\n", 5, c);
+    //  ft_printf("9 : %0c\n", c);
+    //  printf("9 : %0c\n\n", c);
 	printf("CONVERSION DE STRING (s)\n");
-	a = ft_printf("|1 : %s|\n", str);
-	b = printf("|1 : %s|\n", str);
+	a = ft_printf("|1 : %32s|\n", str);
+	b = printf("|1 : %32s|\n", str);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	a = ft_printf("|2 : %-2s|\n", str);
 	b = printf("|2 : %-2s|\n", str);
@@ -65,8 +65,8 @@ int     main()
 	a = ft_printf("|5 : %.*s|\n", 2, str);
 	b = printf("|5 : %.*s|\n", 2, str);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|6 : %12s|\n", str);
-	b = printf("|6 : %12s|\n", str);
+	a = ft_printf("|6 : %-12s|\n", str);
+	b = printf("|6 : %-12s|\n", str);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	a = ft_printf("|7 : %015s|\n", str);
 	b = printf("|7 : %015s|\n", str);
@@ -83,11 +83,11 @@ int     main()
 	a = ft_printf("|11 : %15s|\n", str);
 	b = printf("|11 : %15s|\n", str);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|12 : %0s|\n", str);
-	b = printf("|12 : %0s|\n", str);
+	a = ft_printf("|12 : %010s|\n", str);
+	b = printf("|12 : %010s|\n", str);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|13 : %.0s|\n", str);
-	b = printf("|13 : %.0s|\n", str);
+	a = ft_printf("|13 : %1.1s|\n", str);
+	b = printf("|13 : %1.1s|\n", str);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 // ​
 //     printf("CONVERSION DE POINTEUR (p)\n");
