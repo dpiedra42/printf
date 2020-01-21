@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/21 15:17:21 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/21 16:46:00 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		ft_strlen(const char *str);
 int		ft_str_field(int width, int count, char *str, t_list flags);
 int		ft_str_period(int flag, char *str, int count);
 void	ft_putstr_fd(char *s, int fd);
+int		ft_signed_conv(va_list args, t_list flags);
 
 #endif
