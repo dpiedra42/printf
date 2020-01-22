@@ -6,10 +6,11 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:20 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/21 16:54:08 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/21 17:53:42 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "printf.h"
 #include <stdio.h>
 
 int     main()
@@ -17,8 +18,8 @@ int     main()
    
     // char c;
     // char *str; 
-    // int a;
-    // int b;
+    int a;
+    int b;
     int deci;
     // unsigned int unsi;
     // int hexa; 
@@ -32,24 +33,26 @@ int     main()
     // hexa = 1;
     // uhexa = 5;
 
-        printf("CONVERSION D'ENTIER RELATIF (d, i)\n");
-    printf("|1 : %d|\n", deci);
-    printf("|2 : %-d|\n", deci);
-    printf("|3 : %-10d|\n", deci);
-    printf("|4 : %0d|\n", deci);
-    printf("|5 : %04d|\n", deci);
-    printf("|6 : %.12d|\n", deci);
-    printf("|7 : %.0d|\n", deci);
-    printf("|8 : %.*d|\n", 5, deci);
-    printf("|9 : %*d|\n\n", 5, deci);
-    printf("|1 : %i|\n", deci);
-    printf("|2 : %-i|\n", deci);
-    printf("|3 : %-10i|\n", deci);
-    printf("|4 : %0i|\n", deci);
-    printf("|5 : %04i|\n", deci);
-    printf("|6 : %.12i|\n", deci);
-    printf("|7 : %.0i|\n", deci);
-    printf("|8 : %.*i|\n\n", 5, deci);
+    // printf("CONVERSION D'ENTIER RELATIF (d, i)\n");
+    a = ft_printf("|1 : %-15d|\n", deci);
+    b = printf("|1 : %-15d|\n", deci);
+    printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+    // printf("|2 : %-d|\n", deci);
+    // printf("|3 : %-10d|\n", deci);
+    // printf("|4 : %0d|\n", deci);
+    // printf("|5 : %04d|\n", deci);
+    // printf("|6 : %.12d|\n", deci);
+    // printf("|7 : %.0d|\n", deci);
+    // printf("|8 : %.*d|\n", 5, deci);
+    // printf("|9 : %*d|\n\n", 5, deci);
+    // printf("|1 : %i|\n", deci);
+    // printf("|2 : %-i|\n", deci);
+    // printf("|3 : %-10i|\n", deci);
+    // printf("|4 : %0i|\n", deci);
+    // printf("|5 : %04i|\n", deci);
+    // printf("|6 : %.12i|\n", deci);
+    // printf("|7 : %.0i|\n", deci);
+    // printf("|8 : %.*i|\n\n", 5, deci);
 
     // printf("CONVERSION DE POINTEUR (p)\n");
     // printf("1 : %p\n", &str);

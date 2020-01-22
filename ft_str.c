@@ -6,13 +6,13 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 16:19:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/21 15:14:08 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/22 10:25:30 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_str_field(int width, int count, char *str, t_list flags)
+int	ft_str_field(int count, char *str, t_list flags)
 {
 	int rtn;
 
@@ -66,14 +66,14 @@ int	ft_str_conv(va_list args, t_list flags)
 	count = ft_strlen(str);
 	if ((flags.minus == 1 && flags.width > 0) ||
 		(flags.zero == 1 && flags.width > 0 && flags.period == -1))
-		rtn = ft_str_field(flags.width, count, str, flags);
+		rtn = ft_str_field(count, str, flags);
 	else if (flags.period == 0)
 	{
 		rtn = ft_str_period(flags.width, str, count);
 		return (rtn);
 	}
 	else if (flags.width >= 0)
-		rtn = ft_str_field(flags.width, count, str, flags);
+		rtn = ft_str_field(count, str, flags);
 	rtn += count;
 	return (rtn);
 }
