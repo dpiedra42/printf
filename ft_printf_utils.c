@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:06 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/21 17:50:38 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/22 10:34:15 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
-int	ft_strlen(const char *str)
+int		ft_strlen(const char *str)
 {
 	int i;
 

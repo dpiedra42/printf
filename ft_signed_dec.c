@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:44:31 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/21 17:55:35 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/22 10:29:03 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int	ft_signed_conv(va_list args, t_list flags)
 	if ((flags.minus == 1 && flags.width > 0) ||
 		(flags.zero == 1 && flags.width > 0 && flags.period == -1))
 		rtn = ft_signed_field(count, decimal, flags);
-	else if (flags.period == 0)
-	{
-		rtn = 
-	}
+	// else if (flags.period == 0)
+	// {
+	// 	rtn = 
+	// }
 	rtn += count;
 	return (rtn);
 }

@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/21 15:14:33 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/22 13:56:37 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_list	ft_arg_flags(char c, t_list flags, va_list args)
 	if (c == '*' && flags.period == 0)
 	{
 		flags.precision = 0;
-		flags.width = va_arg(args, int);
+		flags.period = va_arg(args, int);
 	}
 	else if (c == '*')
 		flags.width = va_arg(args, int);
@@ -46,15 +46,14 @@ t_list	ft_sort_flag(char c, t_list flags, va_list args)
 {
 	if (c == '-')
 		flags.minus = 1;
-	else if (c == '0' && flags.width < 1)
+	else if (c == '0' && flags.width < 1 && flags.period == -1)
 		flags.zero = 1;
+	else if (ft_isdigit(c) == 1 && flags.period >= 0)
+		flags.period = flags.period * 10 + c - '0';
 	else if (ft_isdigit(c) == 1)
 		flags.width = flags.width * 10 + c - '0';
 	else if (c == '.')
-	{
 		flags.period = 0;
-		flags.width = 0;
-	}
 	else if (c == '*')
 		flags = ft_arg_flags(c, flags, args);
 	return (flags);
@@ -70,11 +69,10 @@ t_list	ft_make_flags(const char *str, t_list flags, va_list args)
 		flags = ft_sort_flag(str[i], flags, args);
 		i++;
 	}
-	return (flags);
-}
-
 	// printf("\n%d\n", flags.zero);
 	// printf("\n%d\n", flags.minus);
 	// printf("\n%d\n", flags.width);
 	// printf("\n%d\n", flags.period);
 	// printf("\n%d\n", flags.precision);
+	return (flags);
+}

@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/21 16:59:45 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/22 14:21:13 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,21 @@ int	ft_printf(const char *str, ...)
 		str++;
 	}
 	return (rtn);
+}
+
+int	main(void)
+{
+	char	*str;
+	char	*str2;
+	char	c;
+	char	d;
+	int		a;
+	int		b;
+
+	str = "test printf";
+	c = 'deanna';
+	d = 'deanna';
+	str2 = " hello there";
+	
+	return (0);
 }
