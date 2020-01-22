@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/22 14:21:13 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/22 17:38:39 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,26 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	char	*str;
-	char	*str2;
-	char	c;
-	char	d;
-	int		a;
-	int		b;
+	char c;
+	char *str;
+	int deci;
+	unsigned int unsi;
+	int hexa;
+	int i;
+	int a;
+	int b;
+	unsigned int uhexa;
 
 	str = "test printf";
-	c = 'deanna';
-	d = 'deanna';
-	str2 = " hello there";
-	
+	c = 'd';
+	i = 12;
+	deci = 541;
+	unsi = 10;
+	hexa = 1;
+	uhexa = 5;
+
+	a = ft_printf("|1 : %10i|\n", deci);
+	b = printf("|1 : %10i|\n", deci);
+	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
