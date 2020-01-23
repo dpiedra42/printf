@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:44:31 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/22 17:38:05 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/23 17:41:20 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,31 @@ int	ft_find_count(int decimal)
 	return (count);
 }
 
-int	ft_neg_sign(int decimal)
+int	ft_neg_sign(int decimal, t_list flags, int count, int rtn)
 {
-	ft_putchar_fd('-', 1);
-	decimal *= -1;
-	return (decimal);
+	if (flags.width > 0 && flags.period > count &&
+			flags.period < flags.width)
+	{
+		rtn = ft_fix_field(flags.width - flags.period - 1, ' ');
+		ft_putchar_fd('-', 1);
+		rtn += ft_fix_field(flags.period - count + 1, '0');
+	}
+	else if (flags.period > count)
+	{
+		ft_putchar_fd('-', 1);
+		rtn = ft_fix_field(flags.period - count + 1, '0');
+	}
+	else if (flags.width > 0 && flags.period < count)
+	{
+		rtn = ft_fix_field(flags.width - count, ' ');
+		ft_putchar_fd('-', 1);
+	}
+	else if (flags.period < count)
+	{
+		rtn = ft_fix_field(flags.period - count, '0');
+		ft_putchar_fd('-', 1);
+	}
+	return (rtn);
 }
 
 int	ft_signed_field(int count, int decimal, t_list flags)
@@ -44,8 +64,6 @@ int	ft_signed_field(int count, int decimal, t_list flags)
 	rtn = 0;
 	if (flags.minus == 1)
 	{
-		if (decimal < 0)
-			rtn++;
 		ft_putnbr_fd(decimal, 1);
 		rtn += ft_fix_field(flags.width - count, ' ');
 		return (rtn);
@@ -53,7 +71,10 @@ int	ft_signed_field(int count, int decimal, t_list flags)
 	else if (flags.zero == 1)
 	{
 		if (decimal < 0)
-			decimal = ft_neg_sign(decimal);
+		{
+			ft_putchar_fd('-', 1);
+			decimal *= -1;
+		}
 		rtn += ft_fix_field(flags.width - count, '0');
 	}
 	else if (flags.width >= 0)
@@ -62,25 +83,27 @@ int	ft_signed_field(int count, int decimal, t_list flags)
 	return (rtn);
 }
 
-int	ft_signed_period(int width, int period, int decimal, int count)
+int	ft_signed_period(int decimal, int count, t_list flags)
 {
 	int rtn;
 	int n;
 
 	rtn = 0;
-	if (width > 0 && period < count)
-		rtn = ft_fix_field(width - count, ' ');
-	else if (width > 0 && period > count && period < width)
+	if (decimal < 0)
 	{
-		rtn = ft_fix_field(width - period, ' ');
-		rtn += ft_fix_field(period - count, '0');
+		rtn = ft_neg_sign(decimal, flags, count, rtn);
+		decimal *= -1;
 	}
-	else if (period > count)
+	else if (flags.width > 0 && flags.period < count)
+		rtn = ft_fix_field(flags.width - count, ' ');
+	else if (flags.width > 0 && flags.period > count &&
+		flags.period < flags.width)
 	{
-		if (decimal < 0)
-			decimal = ft_neg_sign(decimal);
-		rtn = ft_fix_field(period - count, '0');
+		rtn = ft_fix_field(flags.width - flags.period, ' ');
+		rtn += ft_fix_field(flags.period - count, '0');
 	}
+	else if (flags.period > count)
+		rtn = ft_fix_field(flags.period - count, '0');
 	ft_putnbr_fd(decimal, 1);
 	rtn += count;
 	return (rtn);
@@ -100,7 +123,7 @@ int	ft_signed_conv(va_list args, t_list flags)
 		rtn = ft_signed_field(count, decimal, flags);
 	else if (flags.period >= 0)
 	{
-		rtn = ft_signed_period(flags.width, flags.period, decimal, count);
+		rtn = ft_signed_period(decimal, count, flags);
 		return (rtn);
 	}
 	else if (flags.width >= 0)

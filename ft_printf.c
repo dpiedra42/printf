@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/22 17:38:39 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/23 17:44:08 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,13 @@ int	main(void)
 	str = "test printf";
 	c = 'd';
 	i = 12;
-	deci = 541;
+	deci = -541;
 	unsi = 10;
 	hexa = 1;
 	uhexa = 5;
 
-	a = ft_printf("|1 : %10i|\n", deci);
-	b = printf("|1 : %10i|\n", deci);
+	a = ft_printf("|1 : %5.5i|\n", deci);
+	b = printf("|1 : %5.5i|\n", deci);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
