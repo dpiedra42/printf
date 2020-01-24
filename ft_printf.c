@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/24 16:15:02 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/24 16:36:50 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(void)
 	int				b;
 
 	str = "test printf";
-	unsi = 100;
+	unsi = -100;
 	c = 'd';
 	i = -12;
 	deci = -852;
@@ -69,26 +69,26 @@ int	main(void)
 	a = ft_printf("|1 : %u|\n", unsi);
 	b = printf("|1 : %u|\n", unsi);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|2 : %-u|\n", unsi);
+	a = ft_printf("|2 : %-u|\n", unsi);
 	b = printf("|2 : %-u|\n", unsi);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|3 : %-10u|\n", unsi);
+	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	a = ft_printf("|3 : %-10u|\n", unsi);
 	b = printf("|3 : %-10u|\n", unsi);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|4 : %0u|\n", unsi);
-	b = printf("|4 : %0u|\n", unsi);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|5 : %04u|\n", unsi);
-	b = printf("|5 : %04u|\n", unsi);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|6 : %.12u|\n", unsi);
+	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	a = ft_printf("|4 : %12u|\n", unsi);
+	b = printf("|4 : %12u|\n", unsi);
+	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	a = ft_printf("|5 : %010u|\n", unsi);
+	b = printf("|5 : %010u|\n", unsi);
+	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	a = ft_printf("|6 : %.12u|\n", unsi);
 	b = printf("|6 : %.12u|\n", unsi);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|7 : %.0u|\n", unsi);
+	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	a = ft_printf("|7 : %.0u|\n", unsi);
 	b = printf("|7 : %.0u|\n", unsi);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|8 : %*u|\n", 5, unsi);
-	b = printf("|8 : %15.12u|\n", unsi);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	a = ft_printf("|8 : %.12u|\n", unsi);
+	b = printf("|8 : %.12u|\n", unsi);
+	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
