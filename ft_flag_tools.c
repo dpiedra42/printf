@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/22 14:38:15 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/24 11:28:14 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	ft_start_flags(t_list flags)
 	flags.minus = 0;
 	flags.width = 0;
 	flags.period = -1;
-	flags.precision = -1;
+	//flags.precision = -1;
 	return (flags);
 }
 
@@ -34,7 +34,7 @@ t_list	ft_arg_flags(char c, t_list flags, va_list args)
 {
 	if (c == '*' && flags.period == 0)
 	{
-		flags.precision = 0;
+		//flags.precision = 0;
 		flags.period = va_arg(args, int);
 	}
 	else if (c == '*')
