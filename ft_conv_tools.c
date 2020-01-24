@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/24 13:24:06 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/24 15:16:50 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	ft_find_conv(const char *str, va_list args, t_list flags)
 		rtn = ft_str_conv(args, flags);
 	if (*str == 'd' || *str == 'i')
 		rtn = ft_signed_conv(args, flags);
-	if (*str == 'p')
-		rtn = ft_ptr_conv(args, flags);
+	if (*str == 'u')
+		rtn = ft_unsigned_conv(args,flags);
+	// if (*str == 'p')
+	// 	rtn = ft_ptr_conv(args, flags);
 	return (rtn);
 }
-// if (*str == 'u')
-// if (*str == 'x' || *str == 'X')

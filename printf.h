@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/24 13:26:22 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/24 15:17:49 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct	s_list
 	int	minus;
 	int	width;
 	int	period;
-	// int	precision;
+	int	precision;
 }				t_list;
 
 int		ft_printf(const char *, ...);
@@ -49,5 +49,7 @@ void	ft_putnbr_fd(int n, int fd);
 int		ft_find_count(int decimal);
 int		ft_signed_field(int count, int decimal, t_list flags);
 int		ft_neg_sign(int decimal, t_list flags, int count, int rtn);
+int		ft_unsigned_conv(va_list args, t_list flags);
+// int		ft_ptr_conv(va_list args, t_list flags);
 
 #endif
