@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:20 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/22 17:04:17 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/24 15:24:19 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,32 @@ int     main()
 	// b = printf("|9 : %.*d|\n", 2, deci);
 	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 
-    
+	// printf("CONVERSION D'ENTIER NATUREL (unsigned - u)\n");
+	// a = ftprintf("1 : %u\n", unsi);
+	// b = printf("1 : %u\n", unsi);
+	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	// a = ftprintf("2 : %-u\n", unsi);
+	// b = printf("2 : %-u\n", unsi);
+	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	// a = ftprintf("3 : %-10u\n", unsi);
+	// b = printf("3 : %-10u\n", unsi);
+	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	// a = ftprintf("4 : %0u\n", unsi);
+	// b = printf("4 : %0u\n", unsi);
+	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	// a = ftprintf("5 : %04u\n", unsi);
+	// b = printf("5 : %04u\n", unsi);
+	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	// a = ftprintf("6 : %.12u\n", unsi);
+	// b = printf("6 : %.12u\n", unsi);
+	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	// a = ftprintf("7 : %.0u\n", unsi);
+	// b = printf("7 : %.0u\n", unsi);
+	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	// a = ftprintf("8 : %*u\n\n", 5, unsi);
+	// b = printf("8 : %*u\n\n", 5, unsi);
+	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+
     // printf("CONVERSION DE POINTEUR (p)\n");
     // printf("1 : %p\n", &str);
     // printf("2 : %-p\n", &str);
@@ -174,19 +199,7 @@ int     main()
     // printf("12 : %-45*p\n", 12, &str);
     // printf("13 : %p\n", &i);
     // printf("14 : %p\n\n", &deci);
- 
-
-
-//     printf("CONVERSION D'ENTIER NATUREL (unsigned - u)\n");
-//     printf("1 : %u\n", unsi);
-//     printf("2 : %-u\n", unsi);
-//     printf("3 : %-10u\n", unsi);
-//     printf("4 : %0u\n", unsi);
-//     printf("5 : %04u\n", unsi);
-//     printf("6 : %.12u\n", unsi);
-//     printf("7 : %.0u\n", unsi);
-//     printf("8 : %*u\n\n", 5, unsi);
-// ​
+//     
 //     printf("CONVERSION D'ENTIER EXPRIME EN HEXADECIMAL(x)\n");
 //     printf("1 : %x\n\n", hexa);
 // ​
