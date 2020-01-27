@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/24 11:28:14 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 11:01:03 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_isflag(char c)
 		return (0);
 }
 
-t_list	ft_start_flags(t_list flags)
+t_flag	ft_start_flags(t_flag flags)
 {
 	flags.zero = 0;
 	flags.minus = 0;
@@ -30,7 +30,7 @@ t_list	ft_start_flags(t_list flags)
 	return (flags);
 }
 
-t_list	ft_arg_flags(char c, t_list flags, va_list args)
+t_flag	ft_arg_flags(char c, t_flag flags, va_list args)
 {
 	if (c == '*' && flags.period == 0)
 	{
@@ -42,7 +42,7 @@ t_list	ft_arg_flags(char c, t_list flags, va_list args)
 	return (flags);
 }
 
-t_list	ft_sort_flag(char c, t_list flags, va_list args)
+t_flag	ft_sort_flag(char c, t_flag flags, va_list args)
 {
 	if (c == '-')
 		flags.minus = 1;
@@ -59,7 +59,7 @@ t_list	ft_sort_flag(char c, t_list flags, va_list args)
 	return (flags);
 }
 
-t_list	ft_make_flags(const char *str, t_list flags, va_list args)
+t_flag	ft_make_flags(const char *str, t_flag flags, va_list args)
 {
 	int i;
 

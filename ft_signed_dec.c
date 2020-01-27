@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:44:31 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/24 16:46:18 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 11:02:41 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_find_count(int decimal)
 	return (count);
 }
 
-int	ft_neg_sign(int decimal, t_list flags, int count, int rtn)
+int	ft_neg_sign(int decimal, t_flag flags, int count, int rtn)
 {
 	if (flags.width > 0 && flags.period > count &&
 			flags.period < flags.width)
@@ -57,7 +57,7 @@ int	ft_neg_sign(int decimal, t_list flags, int count, int rtn)
 	return (rtn);
 }
 
-int	ft_signed_field(int count, int decimal, t_list flags)
+int	ft_signed_field(int count, int decimal, t_flag flags)
 {
 	int rtn;
 
@@ -83,7 +83,7 @@ int	ft_signed_field(int count, int decimal, t_list flags)
 	return (rtn);
 }
 
-int	ft_signed_period(int decimal, int count, t_list flags)
+int	ft_signed_period(int decimal, int count, t_flag flags)
 {
 	int rtn;
 	int n;
@@ -109,7 +109,7 @@ int	ft_signed_period(int decimal, int count, t_list flags)
 	return (rtn);
 }
 
-int	ft_signed_conv(va_list args, t_list flags)
+int	ft_signed_conv(va_list args, t_flag flags)
 {
 	int rtn;
 	int count;

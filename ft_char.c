@@ -6,13 +6,13 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 12:20:52 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/21 15:14:10 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 10:59:48 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		ft_c_conv(va_list args, t_list flags)
+int		ft_c_conv(va_list args, t_flag flags)
 {
 	int		rtn;
 	char	c;

@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/24 16:36:50 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 11:03:44 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_new_putchar(char c, int rtn)
 int	ft_printf(const char *str, ...)
 {
 	va_list args;
-	t_list	flags;
+	t_flag	flags;
 	int		i;
 	int		rtn;
 
@@ -64,31 +64,9 @@ int	main(void)
 	c = 'd';
 	i = -12;
 	deci = -852;
-
-	printf("CONVERSION D'ENTIER NATUREL (unsigned - u)\n");
-	a = ft_printf("|1 : %u|\n", unsi);
-	b = printf("|1 : %u|\n", unsi);
-	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|2 : %-u|\n", unsi);
-	b = printf("|2 : %-u|\n", unsi);
-	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|3 : %-10u|\n", unsi);
-	b = printf("|3 : %-10u|\n", unsi);
-	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|4 : %12u|\n", unsi);
-	b = printf("|4 : %12u|\n", unsi);
-	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|5 : %010u|\n", unsi);
-	b = printf("|5 : %010u|\n", unsi);
-	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|6 : %.12u|\n", unsi);
-	b = printf("|6 : %.12u|\n", unsi);
-	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|7 : %.0u|\n", unsi);
-	b = printf("|7 : %.0u|\n", unsi);
-	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	a = ft_printf("|8 : %.12u|\n", unsi);
-	b = printf("|8 : %.12u|\n", unsi);
+	printf("CONVERSION D'ENTIER RELATIF (d, i)\n");
+	a = ft_printf("|1 : %12.5i|\n", 'b0');
+	b = printf("|1 : %12.5i|\n", 'b0');
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }

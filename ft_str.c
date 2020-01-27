@@ -6,13 +6,13 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 16:19:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/22 15:45:16 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 11:01:37 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_str_field(int count, char *str, t_list flags)
+int	ft_str_field(int count, char *str, t_flag flags)
 {
 	int rtn;
 
@@ -62,7 +62,7 @@ int	ft_str_period(int flag, int period, char *str, int count)
 	return (rtn);
 }
 
-int	ft_str_conv(va_list args, t_list flags)
+int	ft_str_conv(va_list args, t_flag flags)
 {
 	int		count;
 	int		rtn;
