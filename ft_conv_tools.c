@@ -6,13 +6,13 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 14:34:27 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 16:36:32 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_fix_field(int flag, char c)
+int		ft_fix_field(int flag, char c)
 {
 	int rtn;
 
@@ -27,6 +27,7 @@ int	ft_fix_field(int flag, char c)
 	}
 	return (rtn);
 }
+
 void	ft_putunbr_fd(unsigned int n, int fd)
 {
 	if (n <= 9 && n >= 0)
@@ -40,7 +41,7 @@ void	ft_putunbr_fd(unsigned int n, int fd)
 	}
 }
 
-int	ft_find_conv(const char *str, va_list args, t_flag flags)
+int		ft_find_conv(const char *str, va_list args, t_flag flags)
 {
 	int rtn;
 

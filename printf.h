@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 14:21:07 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 15:33:17 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct	s_flag
 	int	minus;
 	int	width;
 	int	precision;
+	int asterisk;
 }				t_flag;
 
 int		ft_printf(const char *, ...);
@@ -36,6 +37,7 @@ int		ft_isdigit(int c);
 t_flag	ft_arg_flags(char c, t_flag flags, va_list args);
 int		ft_find_conv(const char *str, va_list args, t_flag flags);
 int		ft_c_conv(va_list args, t_flag flags);
+int		ft_c_asterisk(t_flag flags, char c);
 void	ft_putchar_fd(char c, int fd);
 int		ft_fix_field(int flag, char c);
 int		ft_str_conv(va_list args, t_flag flags);
