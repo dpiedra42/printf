@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:44:31 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 11:02:41 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 11:25:30 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	ft_find_count(int decimal)
 	int count;
 
 	count = 0;
-	if (decimal < 0)
+	if (decimal == 0)
+		count++;
+	else if (decimal < 0)
 	{
 		decimal = decimal * -1;
 		count++;
@@ -94,7 +96,7 @@ int	ft_signed_period(int decimal, int count, t_flag flags)
 		rtn = ft_neg_sign(decimal, flags, count, rtn);
 		decimal *= -1;
 	}
-	else if (flags.width > 0 && flags.period < count)
+	else if (flags.width > 0 && flags.period <= count)
 		rtn = ft_fix_field(flags.width - count, ' ');
 	else if (flags.width > 0 && flags.period > count &&
 		flags.period < flags.width)
