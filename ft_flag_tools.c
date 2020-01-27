@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 16:29:28 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 17:02:31 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ t_flag	ft_make_flags(const char *str, t_flag flags, va_list args)
 		flags = ft_sort_flag(str[i], flags, args);
 		i++;
 	}
-	if (flags.width <= 0)
-		flags.asterisk = flags.width;
 	// printf("%d\n", flags.zero);
 	// printf("%d\n", flags.minus);
 	// printf("%d\n", flags.width);

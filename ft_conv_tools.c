@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 16:36:32 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 17:43:25 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@ int		ft_fix_field(int flag, char c)
 	int rtn;
 
 	rtn = 0;
-	if (flag <= 0)
+	if (flag == 0)
 		return (rtn);
-	while (flag != 0)
+	if (flag > 0)
 	{
-		ft_putchar_fd(c, 1);
-		flag--;
-		rtn++;
+		while (flag != 0)
+		{
+			ft_putchar_fd(c, 1);
+			flag--;
+			rtn++;
+		}
 	}
 	return (rtn);
 }

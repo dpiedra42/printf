@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:44:31 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 14:22:09 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 18:00:59 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,11 @@ int	ft_signed_conv(va_list args, t_flag flags)
 	}
 	else if (flags.width >= 0)
 		rtn = ft_signed_field(count, decimal, flags);
+	else if (flags.width < 0)
+	{
+		ft_putnbr_fd(decimal, 1);
+		rtn = ft_fix_field((flags.width * -1) - count, ' ');
+	}
 	rtn += count;
 	return (rtn);
 }
