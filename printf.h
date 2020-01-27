@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 10:58:52 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 14:21:07 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct	s_flag
 	int	zero;
 	int	minus;
 	int	width;
-	int	period;
 	int	precision;
 }				t_flag;
 
@@ -42,15 +41,19 @@ int		ft_fix_field(int flag, char c);
 int		ft_str_conv(va_list args, t_flag flags);
 size_t	ft_strlen(const char *str);
 int		ft_str_field(int count, char *str, t_flag flags);
-int		ft_str_period(int flag, int period, char *str, int count);
+int		ft_str_precision(int flag, int precision, char *str, int count);
 void	ft_putstr_fd(char *s, int fd);
 int		ft_signed_conv(va_list args, t_flag flags);
-int		ft_signed_period(int decimal, int count, t_flag flags);
+int		ft_signed_precision(int decimal, int count, t_flag flags);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_find_count(int decimal);
 int		ft_signed_field(int count, int decimal, t_flag flags);
 int		ft_neg_sign(int decimal, t_flag flags, int count, int rtn);
 int		ft_unsigned_conv(va_list args, t_flag flags);
+int		ft_find_ucount(unsigned int nbr);
+int		ft_unsigned_field(int count, unsigned int nbr, t_flag flags);
+void	ft_putunbr_fd(unsigned int n, int fd);
+int		ft_unsigned_precision(unsigned int nbr, int count, t_flag flags);
 // int		ft_ptr_conv(va_list args, t_flag flags);
 
 #endif

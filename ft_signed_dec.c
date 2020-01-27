@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:44:31 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 11:25:30 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 14:22:09 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,26 @@ int	ft_find_count(int decimal)
 
 int	ft_neg_sign(int decimal, t_flag flags, int count, int rtn)
 {
-	if (flags.width > 0 && flags.period > count &&
-			flags.period < flags.width)
+	if (flags.width > 0 && flags.precision > count &&
+			flags.precision < flags.width)
 	{
-		rtn = ft_fix_field(flags.width - flags.period - 1, ' ');
+		rtn = ft_fix_field(flags.width - flags.precision - 1, ' ');
 		ft_putchar_fd('-', 1);
-		rtn += ft_fix_field(flags.period - count + 1, '0');
+		rtn += ft_fix_field(flags.precision - count + 1, '0');
 	}
-	else if (flags.period > count)
+	else if (flags.precision > count)
 	{
 		ft_putchar_fd('-', 1);
-		rtn = ft_fix_field(flags.period - count + 1, '0');
+		rtn = ft_fix_field(flags.precision - count + 1, '0');
 	}
-	else if (flags.width > 0 && flags.period < count)
+	else if (flags.width > 0 && flags.precision < count)
 	{
 		rtn = ft_fix_field(flags.width - count, ' ');
 		ft_putchar_fd('-', 1);
 	}
-	else if (flags.period < count)
+	else if (flags.precision < count)
 	{
-		rtn = ft_fix_field(flags.period - count, '0');
+		rtn = ft_fix_field(flags.precision - count, '0');
 		ft_putchar_fd('-', 1);
 	}
 	return (rtn);
@@ -85,10 +85,9 @@ int	ft_signed_field(int count, int decimal, t_flag flags)
 	return (rtn);
 }
 
-int	ft_signed_period(int decimal, int count, t_flag flags)
+int	ft_signed_precision(int decimal, int count, t_flag flags)
 {
 	int rtn;
-	int n;
 
 	rtn = 0;
 	if (decimal < 0)
@@ -96,16 +95,16 @@ int	ft_signed_period(int decimal, int count, t_flag flags)
 		rtn = ft_neg_sign(decimal, flags, count, rtn);
 		decimal *= -1;
 	}
-	else if (flags.width > 0 && flags.period <= count)
+	else if (flags.width > 0 && flags.precision <= count)
 		rtn = ft_fix_field(flags.width - count, ' ');
-	else if (flags.width > 0 && flags.period > count &&
-		flags.period < flags.width)
+	else if (flags.width > 0 && flags.precision > count &&
+		flags.precision < flags.width)
 	{
-		rtn = ft_fix_field(flags.width - flags.period, ' ');
-		rtn += ft_fix_field(flags.period - count, '0');
+		rtn = ft_fix_field(flags.width - flags.precision, ' ');
+		rtn += ft_fix_field(flags.precision - count, '0');
 	}
-	else if (flags.period > count)
-		rtn = ft_fix_field(flags.period - count, '0');
+	else if (flags.precision > count)
+		rtn = ft_fix_field(flags.precision - count, '0');
 	ft_putnbr_fd(decimal, 1);
 	rtn += count;
 	return (rtn);
@@ -121,11 +120,11 @@ int	ft_signed_conv(va_list args, t_flag flags)
 	decimal = va_arg(args, int);
 	count = ft_find_count(decimal);
 	if ((flags.minus == 1 && flags.width > 0) ||
-		(flags.zero == 1 && flags.width > 0 && flags.period == -1))
+		(flags.zero == 1 && flags.width > 0 && flags.precision == -1))
 		rtn = ft_signed_field(count, decimal, flags);
-	else if (flags.period >= 0)
+	else if (flags.precision >= 0)
 	{
-		rtn = ft_signed_period(decimal, count, flags);
+		rtn = ft_signed_precision(decimal, count, flags);
 		return (rtn);
 	}
 	else if (flags.width >= 0)

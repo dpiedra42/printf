@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 12:03:41 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/27 14:34:27 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,18 @@ int	ft_fix_field(int flag, char c)
 		rtn++;
 	}
 	return (rtn);
+}
+void	ft_putunbr_fd(unsigned int n, int fd)
+{
+	if (n <= 9 && n >= 0)
+	{
+		ft_putchar_fd(n + '0', fd);
+	}
+	else if (n > 9)
+	{
+		ft_putunbr_fd(n / 10, fd);
+		ft_putunbr_fd(n % 10, fd);
+	}
 }
 
 int	ft_find_conv(const char *str, va_list args, t_flag flags)
