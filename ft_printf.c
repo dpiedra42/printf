@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 18:01:52 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/28 12:37:00 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,20 @@ int	main(void)
 	int				deci;
 	unsigned int	unsi;
 	int				i;
+	char d;
 	int				a;
 	int				b;
 
 	str = "test printf";
 	unsi = -25;
 	c = 'd';
+	d = 'a';
 	i = -12;
 	deci = -852;
-	printf("CONVERSION D'ENTIER RELATIF (d, i)\n");
-	a = ft_printf("|1 : %*d|\n", 0, i);
-	b = printf("|1 : %*d|\n", 0, i);
+
+	printf("CONVERSION DE STRING (s)\n");
+	a = ft_printf("|1 : %0s|\n", str);
+	b = printf("|1 : %-12s|\n", str);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }

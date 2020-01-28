@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 15:33:17 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/28 11:35:41 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ typedef struct	s_flag
 	int	zero;
 	int	minus;
 	int	width;
+	int period;
 	int	precision;
-	int asterisk;
 }				t_flag;
 
 int		ft_printf(const char *, ...);

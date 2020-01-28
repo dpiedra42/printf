@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 16:19:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/27 14:06:50 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/28 12:34:19 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,21 @@ int	ft_str_conv(va_list args, t_flag flags)
 	rtn = 0;
 	str = va_arg(args, char *);
 	count = ft_strlen(str);
-	if ((flags.minus == 1 && flags.width > 0) ||
-		(flags.zero == 1 && flags.width > 0 && flags.precision == -1))
-		rtn = ft_str_field(count, str, flags);
-	else if (flags.precision >= 0)
+	if (flags.minus == 1 && flags.width >= 0)
 	{
-		rtn = ft_str_precision(flags.width, flags.precision, str, count);
-		return (rtn);
+		ft_putstr_fd(str, 1);
+		rtn = ft_fix_field(flags.width - count, ' ');
 	}
-	else if (flags.width >= 0)
-		rtn = ft_str_field(count, str, flags);
 	rtn += count;
 	return (rtn);
 }
+// if ((flags.minus == 1 && flags.width > 0) ||
+	// 	(flags.zero == 1 && flags.width > 0 && flags.precision == -1))
+	// 	rtn = ft_str_field(count, str, flags);
+	// else if (flags.precision >= 0)
+	// {
+	// 	rtn = ft_str_precision(flags.width, flags.precision, str, count);
+	// 	return (rtn);
+	// }
+	// else if (flags.width >= 0)
+	// 	rtn = ft_str_field(count, str, flags);
