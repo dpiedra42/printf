@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/28 11:35:41 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/28 15:07:04 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,12 @@ int		ft_isdigit(int c);
 t_flag	ft_arg_flags(char c, t_flag flags, va_list args);
 int		ft_find_conv(const char *str, va_list args, t_flag flags);
 int		ft_c_conv(va_list args, t_flag flags);
-int		ft_c_asterisk(t_flag flags, char c);
 void	ft_putchar_fd(char c, int fd);
 int		ft_fix_field(int flag, char c);
 int		ft_str_conv(va_list args, t_flag flags);
 size_t	ft_strlen(const char *str);
-int		ft_str_field(int count, char *str, t_flag flags);
-int		ft_str_precision(int flag, int precision, char *str, int count);
+int		ft_str_width(int width, int precision, char *str, int count);
+int		ft_str_precision(t_flag flags, char *str, int count);
 void	ft_putstr_fd(char *s, int fd);
 int		ft_signed_conv(va_list args, t_flag flags);
 int		ft_signed_precision(int decimal, int count, t_flag flags);

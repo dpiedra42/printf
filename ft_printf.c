@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/28 12:37:00 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/28 15:10:44 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ int	main(void)
 	deci = -852;
 
 	printf("CONVERSION DE STRING (s)\n");
-	a = ft_printf("|1 : %0s|\n", str);
-	b = printf("|1 : %-12s|\n", str);
+	a = ft_printf("|1 : %*.s|\n", -5, str);
+	b = printf("|1 : %*.s|\n", -5, str);
 	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
