@@ -6,13 +6,13 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/30 10:47:56 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/30 13:44:25 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		ft_fix_field(int flag, char c)
+int	ft_fix_field(int flag, char c)
 {
 	int rtn;
 
@@ -28,20 +28,25 @@ int		ft_fix_field(int flag, char c)
 	return (rtn);
 }
 
-// void	ft_putunbr_fd(unsigned int n, int fd)
-// {
-// 	if (n <= 9 && n >= 0)
-// 	{
-// 		ft_putchar_fd(n + '0', fd);
-// 	}
-// 	else if (n > 9)
-// 	{
-// 		ft_putunbr_fd(n / 10, fd);
-// 		ft_putunbr_fd(n % 10, fd);
-// 	}
-// }
+int	ft_find_count(int decimal)
+{
+	int count;
 
-int		ft_find_conv(const char *str, va_list args, t_flag flags)
+	count = 0;
+	if (decimal <= 0)
+	{
+		count++;
+		decimal *= -1;
+	}
+	while (decimal > 0)
+	{
+		decimal = decimal / 10;
+		count++;
+	}
+	return (count);
+}
+
+int	ft_find_conv(const char *str, va_list args, t_flag flags)
 {
 	int rtn;
 
@@ -57,3 +62,16 @@ int		ft_find_conv(const char *str, va_list args, t_flag flags)
 	// 	rtn = ft_ptr_conv(args, flags);
 	return (rtn);
 }
+
+// void	ft_putunbr_fd(unsigned int n, int fd)
+// {
+// 	if (n <= 9 && n >= 0)
+// 	{
+// 		ft_putchar_fd(n + '0', fd);
+// 	}
+// 	else if (n > 9)
+// 	{
+// 		ft_putunbr_fd(n / 10, fd);
+// 		ft_putunbr_fd(n % 10, fd);
+// 	}
+// }

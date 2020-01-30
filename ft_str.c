@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 16:19:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/30 10:37:46 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/30 11:45:09 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,22 +87,22 @@ int	ft_str_conv(va_list args, t_flag flags)
 
 	rtn = 0;
 	str = va_arg(args, char *);
+	if (str == NULL)
+		str = "(null)";
 	count = ft_strlen(str);
 	if (flags.minus == 1 && flags.width >= 0 && flags.period == -1)
 	{
 		ft_putstr_fd(str, 1);
 		rtn = ft_fix_field(flags.width - count, ' ');
+		rtn += count;
 	}
 	else if (flags.period == 0)
-	{
 		rtn = ft_str_precision(flags, str, count);
-		return (rtn);
-	}
 	else if (flags.width >= 0)
 	{
 		rtn = ft_fix_field(flags.width - count, ' ');
 		ft_putstr_fd(str, 1);
+		rtn += count;
 	}
-	rtn += count;
 	return (rtn);
 }

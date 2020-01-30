@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/30 10:46:56 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/30 13:46:40 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int	main(void)
 	d = 'a';
 	i = -12;
 	deci = -852;
-
+	a = ft_printf("|1 : %32d|\n", deci);
+	b =    printf("|1 : %-20.20d|\n", deci);
+	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
