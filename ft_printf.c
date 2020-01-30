@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/28 15:10:44 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/30 10:46:56 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	main(void)
 {
 	char			c;
 	char			*str;
+	char			*str2;
 	int				deci;
 	unsigned int	unsi;
 	int				i;
@@ -61,15 +62,12 @@ int	main(void)
 	int				b;
 
 	str = "test printf";
+	str2 = "hello deanna";
 	unsi = -25;
 	c = 'd';
 	d = 'a';
 	i = -12;
 	deci = -852;
 
-	printf("CONVERSION DE STRING (s)\n");
-	a = ft_printf("|1 : %*.s|\n", -5, str);
-	b = printf("|1 : %*.s|\n", -5, str);
-	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
