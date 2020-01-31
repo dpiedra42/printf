@@ -6,30 +6,11 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 16:19:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/30 11:45:09 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/01/31 14:22:35 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-int	ft_neg_precision(t_flag flags, char *str, int count)
-{
-	int rtn;
-
-	rtn = 0;
-	if (flags.minus == 0)
-	{
-		rtn = ft_fix_field(flags.width - count, ' ');
-		ft_putstr_fd(str, 1);
-	}
-	if (flags.minus == 1)
-	{
-		ft_putstr_fd(str, 1);
-		rtn = ft_fix_field(flags.width - count, ' ');
-	}
-	rtn += count;
-	return (rtn);
-}
 
 int	ft_str_width(t_flag flags, char *str, int count)
 {
@@ -52,6 +33,25 @@ int	ft_str_width(t_flag flags, char *str, int count)
 		rtn = ft_fix_field(flags.width - count, ' ');
 	else
 		rtn = ft_fix_field(flags.width - flags.precision, ' ');
+	return (rtn);
+}
+
+int	ft_neg_precision(t_flag flags, char *str, int count)
+{
+	int rtn;
+
+	rtn = 0;
+	if (flags.minus == 0)
+	{
+		rtn = ft_fix_field(flags.width - count, ' ');
+		ft_putstr_fd(str, 1);
+	}
+	if (flags.minus == 1)
+	{
+		ft_putstr_fd(str, 1);
+		rtn = ft_fix_field(flags.width - count, ' ');
+	}
+	rtn += count;
 	return (rtn);
 }
 
