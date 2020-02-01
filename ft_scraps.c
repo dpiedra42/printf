@@ -1,100 +1,44 @@
-// int	ft_signed_width(t_flag flags, int decimal, int count)
-// {
-// 	int rtn;
+static int	ullnum_length(unsigned long long n, int b)
+{
+	int	i;
 
-// 	rtn = 0;
-// 	if (flags.precision >= count && flags.precision < flags.width)
-// 	{
-// 		rtn = ft_fix_field(flags.width - flags.precision - 1, ' ');
-// 		ft_putchar_fd('-', 1);
-// 		rtn += ft_fix_field(flags.precision - count + 1, '0');
-// 	}
-// 	else if (flags.precision < count)
-// 	{
-// 		rtn = ft_fix_field(flags.width - count, ' ');
-// 		ft_putchar_fd('-', 1);
-// 	}
-// 	return (rtn);
-// }
+	i = 0;
+	while (n > 0)
+	{
+		n /= b;
+		i++;
+	}
+	return (i);
+}
 
-// int	ft_neg_sign(int decimal, t_flag flags, int count, int rtn)
-// {
-// 	// if (flags.minus == 1 || flags.width > 0)
-// 	// 	rtn = ft_neg_width(flags, decimal, count);
-// 	if (flags.precision >= count)
-// 	{
-// 		ft_putchar_fd('-', 1);
-// 		rtn = ft_fix_field(flags.precision - count + 1, '0');
-// 	}
-// 	else if (flags.precision < count)
-// 		ft_putchar_fd('-', 1);
-// 	return (rtn);
-// }
+int			put_ullnbr(unsigned long long nb, char *base, char *str, int l)
+{
+	int	b;
 
-// int	ft_signed_precision(int decimal, int count, t_flag flags)
-// {
-// 	int rtn;
+	b = ft_strlen(base);
+	if (l == 0)
+	{
+		str[l] = base[nb % b];
+		return (0);
+	}
+	else
+	{
+		str[l] = base[nb % b];
+		return (put_ullnbr(nb / b, base, str, --l));
+	}
+}
 
-// 	rtn = 0;
-	// if (decimal < 0)
-	// {
-	// 	rtn = ft_neg_sign(decimal, flags, count, rtn);
-	// 	decimal *= -1;
-	// }
-// 	if (decimal == 0 && flags.precision == 0)
-// 		return (rtn);
-// 	if (flags.width >= 0 && flags.precision <= count)
-// 		rtn = ft_fix_field(flags.width - count, ' ');
-// 	else if (flags.width > 0 && flags.precision > count &&
-// 		flags.precision < flags.width)
-// 	{
-// 		rtn = ft_fix_field(flags.width - flags.precision, ' ');
-// 		rtn += ft_fix_field(flags.precision - count, '0');
-// 	}
-// 	else if (flags.precision > count)
-// 		rtn = ft_fix_field(flags.precision - count, '0');
-// 	ft_putnbr_fd(decimal, 1);
-// 	rtn += count;
-// 	return (rtn);
-// }
+char		*ft_ulltoa_base(unsigned long long nbr, char *base)
+{
+	int		b;
+	char	*str;
+	int		l;
 
-// int	ft_signed_field(int count, int decimal, t_flag flags)
-// {
-// 	int rtn;
-
-// 	rtn = 0;
-// 	if (flags.minus == 1)
-// 	{
-// 		ft_putnbr_fd(decimal, 1);
-// 		rtn += ft_fix_field(flags.width - count, ' ');
-// 		return (rtn);
-// 	}
-// 	else if (flags.zero == 1)
-// 	{
-// 		if (decimal < 0)
-// 		{
-// 			ft_putchar_fd('-', 1);
-// 			decimal *= -1;
-// 		}
-// 		rtn += ft_fix_field(flags.width - count, '0');
-// 	}
-// 	else if (flags.width >= 0)
-// 		rtn = ft_fix_field(flags.width - count, ' ');
-// 	ft_putnbr_fd(decimal, 1);
-// 	return (rtn);
-// }
-
-//signed_conv
-// if (((flags.minus == 1 && flags.width > 0) || (flags.zero == 1 &&
-// 		flags.width > 0)) && flags.precision == -1)
-// 	{
-// 		rtn = ft_signed_field(count, decimal, flags);
-// 		rtn += count;
-// 	}
-// 	else if (flags.period == 0)
-// 		rtn = ft_signed_precision(decimal, count, flags);
-// 	else if (flags.width >= 0)
-// 	{
-// 		rtn = ft_signed_field(count, decimal, flags);
-// 		rtn += count;
-// 	}
+	b = ft_strlen(base);
+	l = ullnum_length(nbr, b);
+	if (!(str = malloc(sizeof(char) * l + 1)))
+		return (0);
+	str[l] = '\0';
+	put_ullnbr(nbr, base, str, l - 1);
+	return (str);
+}
