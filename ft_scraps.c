@@ -1,4 +1,4 @@
-static int	ullnum_length(unsigned long long n, int b)
+static int	num_length(unsigned long long n, int b)
 {
 	int	i;
 
@@ -11,7 +11,7 @@ static int	ullnum_length(unsigned long long n, int b)
 	return (i);
 }
 
-int			put_ullnbr(unsigned long long nb, char *base, char *str, int l)
+int			put_nbr(unsigned long long nb, char *base, char *str, int l)
 {
 	int	b;
 
@@ -28,17 +28,17 @@ int			put_ullnbr(unsigned long long nb, char *base, char *str, int l)
 	}
 }
 
-char		*ft_ulltoa_base(unsigned long long nbr, char *base)
+char		*ft_itoa_base(unsigned long long nbr, char *base)
 {
 	int		b;
 	char	*str;
 	int		l;
 
 	b = ft_strlen(base);
-	l = ullnum_length(nbr, b);
+	l = num_length(nbr, b);
 	if (!(str = malloc(sizeof(char) * l + 1)))
 		return (0);
 	str[l] = '\0';
-	put_ullnbr(nbr, base, str, l - 1);
+	put_nbr(nbr, base, str, l - 1);
 	return (str);
 }
