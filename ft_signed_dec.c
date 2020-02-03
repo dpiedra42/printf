@@ -6,13 +6,13 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 10:56:33 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/03 11:19:12 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/03 12:58:39 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_signed_width(t_flag flags, int decimal, int sign, int count)
+int	ft_signed_width(t_flag flags, int sign, int count)
 {
 	int rtn;
 
@@ -35,7 +35,7 @@ int	ft_signed_width(t_flag flags, int decimal, int sign, int count)
 	return (rtn);
 }
 
-int	ft_signed_precision(t_flag flags, int decimal, int sign, int count)
+int	ft_signed_precision(t_flag flags, int sign, int count)
 {
 	int rtn;
 
@@ -59,14 +59,14 @@ int	ft_signed_flags(t_flag flags, int decimal, int sign, int count)
 	rtn = 0;
 	if (flags.minus == 1)
 	{
-		rtn = ft_signed_precision(flags, decimal, sign, count);
+		rtn = ft_signed_precision(flags, sign, count);
 		ft_putnbr_fd(decimal, 1);
-		rtn += ft_signed_width(flags, decimal, sign, count);
+		rtn += ft_signed_width(flags, sign, count);
 	}
 	else if (flags.minus == 0)
 	{
-		rtn = ft_signed_width(flags, decimal, sign, count);
-		rtn += ft_signed_precision(flags, decimal, sign, count);
+		rtn = ft_signed_width(flags, sign, count);
+		rtn += ft_signed_precision(flags, sign, count);
 		ft_putnbr_fd(decimal, 1);
 	}
 	return (rtn);

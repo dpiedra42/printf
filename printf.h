@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/31 14:23:02 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/03 13:16:03 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,17 @@ int		ft_str_precision(t_flag flags, char *str, int count);
 int		ft_neg_precision(t_flag flags, char *str, int count);
 void	ft_putstr_fd(char *s, int fd);
 int		ft_signed_conv(va_list args, t_flag flags);
-void	ft_putnbr_fd(int n, int fd);
 int		ft_find_count(int decimal);
-// int		ft_unsigned_conv(va_list args, t_flag flags);
-// int		ft_find_ucount(unsigned int nbr);
-// int		ft_unsigned_field(int count, unsigned int nbr, t_flag flags);
-// void	ft_putunbr_fd(unsigned int n, int fd);
-// int		ft_unsigned_precision(unsigned int nbr, int count, t_flag flags);
+int		ft_signed_flags(t_flag flags, int decimal, int sign, int count);
+int		ft_signed_precision(t_flag flags, int sign, int count);
+int		ft_signed_width(t_flag flags, int sign, int count);
+void	ft_putnbr_fd(int n, int fd);
+int		ft_unsigned_conv(va_list args, t_flag flags);
+int		ft_find_ucount(unsigned int nbr);
+int		ft_unsigned_width(t_flag flags, int count);
+void	ft_putunbr_fd(unsigned int n, int fd);
+int		ft_unsigned_precision(t_flag flags, int count);
+int		ft_unsigned_flags(t_flag flags, unsigned int nbr, int count);
 // // int		ft_ptr_conv(va_list args, t_flag flags);
 
 #endif
