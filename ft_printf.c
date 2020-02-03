@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/03 13:24:53 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/03 16:16:50 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,15 @@ int	main(void)
 	int				b;
 
 	str = "test printf";
-	str2 = "hello deanna";
+	str2 = "hello";
 	unsi = 0;
 	c = 'd';
 	d = 'a';
 	i = -12;
 	deci = -52;
-	printf("CONVERSION D'ENTIER NATUREL (unsigned - u)\n");
-	a = ft_printf("|1 : %*.u|\n", 10, unsi);
-	b =    printf("|1 : %*.u|\n", 10, unsi);
-	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	// printf("CONVERSION D'ENTIER NATUREL (unsigned - u)\n");
+	// a = ft_printf("|1 : %*.u|\n", 10, unsi);
+	b =    printf("|1 : %x|\n", 12);
+	// printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
