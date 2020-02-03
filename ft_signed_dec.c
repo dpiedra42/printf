@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 10:56:33 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/03 10:56:36 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/03 11:19:12 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ int	ft_signed_precision(t_flag flags, int decimal, int sign, int count)
 	rtn = 0;
 	if (sign == 1 && flags.precision < count && flags.zero == 0)
 		ft_putchar_fd('-', 1);
-	else if (flags.precision > 0)
+	else if (flags.precision > 0 && sign == 1)
 	{
-		if (sign == 1)
-			ft_putchar_fd('-', 1);
-		rtn += ft_fix_field(flags.precision - count, '0');
+		ft_putchar_fd('-', 1);
+		rtn += ft_fix_field(flags.precision - count + 1, '0');
 	}
+	else if (flags.precision > 0)
+		rtn += ft_fix_field(flags.precision - count, '0');
 	return (rtn);
 }
 

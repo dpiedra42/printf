@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:20 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/24 15:24:19 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/03 11:08:43 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,58 +105,58 @@ int     main()
 	// b = printf("|13 : %*.*s||13 : |%52.2s|\n", 5, 1, str, str2);
 	// printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 
-    // printf("CONVERSION D'ENTIER RELATIF (d, i)\n");
-	// a = ft_printf("|1 : %12.5i|\n", deci);
-	// b = printf("|1 : %12.5i|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|2 : %-i|\n", deci);
-	// b = printf("|2 : %-i|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|3 : %-10i|\n", deci);
-	// b = printf("|3 : %-10i|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|4 : %0i|\n", deci);
-	// b = printf("|4 : %0i|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|5 : %04i|\n", deci);
-	// b = printf("|5 : %04i|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|6 : %.12i|\n", deci);
-	// b = printf("|6 : %.12i|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|7 : %12i|\n", deci);
-	// b = printf("|7 : %12i|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|8 : %.*i|\n", 5, deci);
-	// b = printf("|8 : %.*i|\n", 5, deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-    // a = ft_printf("|1 : %-15d|\n", deci);
-	// b = printf("|1 : %-15d|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|2 : %-d|\n", deci);
-	// b = printf("|2 : %-d|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|3 : %-10d|\n", deci);
-	// b = printf("|3 : %-10d|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|4 : %0d|\n", deci);
-	// b = printf("|4 : %0d|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|5 : %04d|\n", deci);
-	// b = printf("|5 : %04d|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-    // a = ft_printf("|6 : %0.1d|\n", deci);
-	// b = printf("|6 : %0.1d|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|7 : %.0d|\n", deci);
-	// b = printf("|7 : %.0d|\n", deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-    // a = ft_printf("|8 : %.*d|\n", 25, deci);
-	// b = printf("|8 : %.*d|\n", 25, deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
-	// a = ft_printf("|9 : %.*d|\n", 2, deci);
-	// b = printf("|9 : %.*d|\n", 2, deci);
-	// printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+//    printf("CONVERSION D'ENTIER RELATIF (d, i)\n");
+// 	a = ft_printf("|1 : %12.5i|\n", deci);
+// 	b =    printf("|1 : %12.5i|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|2 : %-i|\n", deci);
+// 	b =    printf("|2 : %-i|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|3 : %-10i|\n", deci);
+// 	b =    printf("|3 : %-10i|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|4 : %0i|\n", deci);
+// 	b =    printf("|4 : %0i|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|5 : %04i|\n", deci);
+// 	b =    printf("|5 : %04i|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|6 : %.12i|\n", deci);
+// 	b =    printf("|6 : %.12i|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|7 : %12i|\n", deci);
+// 	b =    printf("|7 : %12i|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|8 : %.*i|\n", 5, deci);
+// 	b =    printf("|8 : %.*i|\n", 5, deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+//     a = ft_printf("|1 : %-15d|\n", deci);
+// 	b =    printf("|1 : %-15d|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|2 : %-d|\n", deci);
+// 	b =    printf("|2 : %-d|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|3 : %-10d|\n", deci);
+// 	b =    printf("|3 : %-10d|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|4 : %0d|\n", deci);
+// 	b =    printf("|4 : %0d|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|5 : %04d|\n", deci);
+// 	b =    printf("|5 : %04d|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+//     a = ft_printf("|6 : %0.1d|\n", deci);
+// 	b =    printf("|6 : %0.1d|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|7 : %.0d|\n", deci);
+// 	b =    printf("|7 : %.0d|\n", deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+//     a = ft_printf("|8 : %.*d|\n", 25, deci);
+// 	b =    printf("|8 : %.*d|\n", 25, deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+// 	a = ft_printf("|9 : %.*d|\n", 2, deci);
+// 	b =    printf("|9 : %.*d|\n", 2, deci);
+// 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 
 	// printf("CONVERSION D'ENTIER NATUREL (unsigned - u)\n");
 	// a = ftprintf("1 : %u\n", unsi);

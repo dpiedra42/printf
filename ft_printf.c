@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/31 15:52:13 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/03 11:20:05 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,10 @@ int	main(void)
 	c = 'd';
 	d = 'a';
 	i = -12;
-	deci = 852;
-	a = ft_printf("|1 : %-11d|\n", deci);
-	b =    printf("|1 : %-11d|\n", deci);
-	printf("Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	deci = 0;
+	printf("CONVERSION D'ENTIER RELATIF (d, i)\n");
+	a = ft_printf("|1 : %-12.*i|\n", 5, deci);
+	b =    printf("|1 : %-12.*i|\n", 5, deci);
+	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
