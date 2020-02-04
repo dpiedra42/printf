@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 16:22:02 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/03 16:58:58 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/04 11:24:38 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ int			main(void)
 {
 	int i;
 
-	i = 0;
-	printf("%s\n", ft_itoa_base(i, "123456789abcdef"));
+	i = 52;
+	printf("%s\n", ft_itoa_base(i, 16));
 	printf("%x\n", i);
 	return (0);
 }
