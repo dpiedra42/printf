@@ -5,64 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/03 16:22:02 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/04 11:24:38 by dpiedra          ###   ########.fr       */
+/*   Created: 2020/02/04 11:42:40 by dpiedra           #+#    #+#             */
+/*   Updated: 2020/02/04 14:07:17 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-static int	num_length(unsigned int n, int b)
+int		ft_neg_nbr(int neg, int base, int nbr)
 {
-	int	i;
-
-	i = 0;
-	while (n > 0)
-	{
-		n /= b;
-		i++;
-	}
-	return (i);
-}
-
-int			putnbr(unsigned int nb, char *base, char *str, int l)
-{
-	int	b;
-
-	b = ft_strlen(base);
-	if (l == 0)
-	{
-		str[l] = base[nb % b - 1];
-		return (0);
-	}
+	if (base == 10 && nbr < 0)
+		neg = 1;
 	else
-	{
-		str[l] = base[nb % b];
-		return (putnbr(nb / b, base, str, --l));
-	}
+		neg = 0;
+	return (neg);
 }
 
-char		*ft_itoa_base(unsigned int nbr, char *base)
+int		ft_count_space(int base, int i)
 {
-	int		b;
+	if (i == 0)
+		return (1);
+	else
+		return (base * ft_count_space(base, i - 1));
+}
+
+char	*ft_itoa_base(int nbr, int base)
+{
+	int		i;
 	char	*str;
-	int		l;
+	int		neg;
 
-	b = ft_strlen(base);
-	l = num_length(nbr, b);
-	if (!(str = malloc(sizeof(char) * l + 1)))
-		return (0);
-	str[l] = '\0';
-	putnbr(nbr, base, str, l - 1);
+	i = 1;
+	neg = 0;
+	neg = ft_neg_nbr(neg, base, nbr);
+	if (nbr < 0)
+		nbr *= -1;
+	while (ft_count_space(base, i) - 1 < nbr)
+		i++;
+	str = (char*)malloc(sizeof(str) * i);
+	str[i] = '\0';
+	while (i-- > 0)
+	{
+		if (nbr % base > 9)
+			str[i + neg] = (nbr % base) + 'a' - 10;
+		else
+			str[i + neg] = (nbr % base) + '0';
+		nbr = nbr / base;
+	}
+	if (neg == 1)
+		str[0] = '-';
 	return (str);
-}
-
-int			main(void)
-{
-	int i;
-
-	i = 52;
-	printf("%s\n", ft_itoa_base(i, 16));
-	printf("%x\n", i);
-	return (0);
 }

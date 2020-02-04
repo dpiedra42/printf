@@ -1,55 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_scraps.c                                        :+:      :+:    :+:   */
+/*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/04 11:42:40 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/04 11:54:26 by dpiedra          ###   ########.fr       */
+/*   Created: 2020/02/03 16:22:02 by dpiedra           #+#    #+#             */
+/*   Updated: 2020/02/04 15:01:32 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		ft_count(int b, int pow)
+int		ft_count_space(int base, int i)
 {
-	if (pow == 0)
+	if (i == 0)
 		return (1);
 	else
-		return (b * ft_count(b, pow - 1));
+		return (base * ft_count_space(base, i - 1));
 }
 
-char	*ft_itoa_base(unsigned long long int nbr, int base)
+char	*ft_uitoa_base(unsigned int nbr, int base, int x)
 {
 	int		i;
 	char	*str;
 
 	i = 1;
-	if (nbr < 0)
-		nbr *= -1;
-	while (ft_count(base, i) - 1 < nbr)
+	while (ft_count_space(base, i) - 1 < nbr)
 		i++;
-	printf("%i\n", i);
 	str = (char*)malloc(sizeof(str) * i);
 	str[i] = '\0';
 	while (i-- > 0)
 	{
-		if (nbr % base > 9)
+		if (x == 1 && nbr % base > 9)
+			str[i] = (nbr % base) + 'A' - 10;
+		else if (nbr % base > 9 && x == 0)
 			str[i] = (nbr % base) + 'a' - 10;
 		else
 			str[i] = (nbr % base) + '0';
 		nbr = nbr / base;
 	}
 	return (str);
-}
-
-int		main(void)
-{
-	int i;
-
-	i = 1;
-	printf("%s\n", ft_itoa_base(i, 16));
-	printf("%x\n", i);
-	return (0);
 }
