@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 15:18:21 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/03 13:25:19 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/04 15:55:16 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,14 @@ int	ft_unsigned_conv(va_list args, t_flag flags)
 	rtn = 0;
 	nbr = va_arg(args, unsigned int);
 	count = ft_find_ucount(nbr);
-	if (flags.zero == 1 && (flags.minus == 1 || flags.precision >= 0))
-		flags.zero = 0;
-	else if (flags.precision == 0 && nbr == 0)
+	if ((flags.precision == 0 && nbr == 0 && flags.zero == 1) ||
+		(flags.precision == 0 && nbr == 0))
 	{
 		rtn += ft_fix_field(flags.width, ' ');
 		return (rtn);
 	}
+	else if (flags.zero == 1 && (flags.minus == 1 || flags.precision >= 0))
+		flags.zero = 0;
 	rtn += ft_unsigned_flags(flags, nbr, count);
 	rtn += count;
 	return (rtn);

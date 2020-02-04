@@ -6,12 +6,55 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 11:21:23 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/04 15:14:59 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/04 15:56:29 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
+int	ft_hexa_width(t_flag flags, int len)
+{
+	int rtn;
+
+	rtn = 0;
+	if (flags.zero == 1)
+		rtn = ft_fix_field(flags.width - len, '0');
+	else if (flags.precision >= len)
+		rtn += ft_fix_field(flags.width - flags.precision, ' ');
+	else
+		rtn += ft_fix_field(flags.width - len, ' ');
+	return (rtn);
+}
+
+int	ft_hexa_precision(t_flag flags, int len)
+{
+	int rtn;
+
+	rtn = 0;
+	if (flags.precision > 0)
+		rtn += ft_fix_field(flags.precision - len, '0');
+	return (rtn);
+}
+
+int	ft_hexa_flags(t_flag flags, char *str, int len)
+{
+	int rtn;
+
+	rtn = 0;
+	if (flags.minus == 1)
+	{
+		rtn = ft_unsigned_precision(flags, len);
+		ft_putstr_fd(str, 1);
+		rtn += ft_unsigned_width(flags, len);
+	}
+	else if (flags.minus == 0)
+	{
+		rtn = ft_unsigned_width(flags, len);
+		rtn += ft_unsigned_precision(flags, len);
+		ft_putstr_fd(str, 1);
+	}
+	return (rtn);
+}
 
 int	ft_hexa_conv(va_list args, t_flag flags, int x)
 {
@@ -24,14 +67,16 @@ int	ft_hexa_conv(va_list args, t_flag flags, int x)
 	nbr = va_arg(args, unsigned int);
 	str = ft_uitoa_base(nbr, 16, x);
 	len = ft_strlen(str);
-	if (flags.zero == 1 && (flags.minus == 1 || flags.precision >= 0))
-		flags.zero = 0;
-	else if (flags.precision == 0 && *str == 0)
+	if ((flags.precision == 0 && nbr == 0 && flags.zero == 1) ||
+		(flags.precision == 0 && nbr == 0))
 	{
 		rtn += ft_fix_field(flags.width, ' ');
 		return (rtn);
 	}
-	rtn += ft_hexa_flags(flags, nbr, len);
+	if (flags.zero == 1 && (flags.minus == 1 || flags.precision >= 0))
+		flags.zero = 0;
+	rtn += ft_hexa_flags(flags, str, len);
 	rtn += len;
+	free(str);
 	return (rtn);
 }
