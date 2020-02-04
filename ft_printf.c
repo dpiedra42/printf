@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/04 16:16:44 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/04 17:04:13 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	main(void)
 {
 	char			c;
 	char			*str;
-	char			*str2;
 	int				deci;
 	unsigned int	unsi;
 	int				i;
@@ -62,15 +61,14 @@ int	main(void)
 	int				b;
 
 	str = "test printf";
-	str2 = "hello";
 	unsi = -21;
 	c = 'd';
 	d = 'a';
 	i = -12;
 	deci = -52;
 	printf("CONVERSION D'ENTIER NATUREL (HEXA - x)\n");
-	a = ft_printf("|1 : %0.*X|\n", 0, -0);
-	b =    printf("|1 : %0.*X|\n", 0, -0);
-	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
+	a = ft_printf("|1 : %p|\n", str);
+	b =    printf("|1 : %p|\n", str);
+	// printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }
