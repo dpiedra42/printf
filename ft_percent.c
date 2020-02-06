@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:58:15 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/06 16:40:34 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/06 17:06:58 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_percent_flags(t_flag flags)
 	return (rtn);
 }
 
-int	ft_percent_conv(va_list args, t_flag flags)
+int	ft_percent_conv(t_flag flags)
 {
 	int	rtn;
 

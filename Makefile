@@ -6,7 +6,7 @@
 #    By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/16 17:16:30 by dpiedra           #+#    #+#              #
-#    Updated: 2020/02/06 16:40:30 by dpiedra          ###   ########.fr        #
+#    Updated: 2020/02/06 17:10:27 by dpiedra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJ		=	$(SRCS:.c=.o)
 all		:	$(NAME)
 
 $(NAME)	:	$(OBJ)
-			$(CC) $((SRCS) libft.h $(CFLAGS) 
+			$(CC) $((SRCS) printf.h $(CFLAGS) 
 			ar -rcs $(NAME) $(OBJ) $(HEADER)
 
 .PHONY	:	clean fclean re

@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/06 12:08:40 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/06 17:09:01 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,13 @@ int		ft_unsigned_precision(t_flag flags, int count);
 int		ft_unsigned_flags(t_flag flags, unsigned int nbr, int count);
 int		ft_hexa_conv(va_list args, t_flag flags, int x);
 char	*ft_uitoa_base(unsigned int nbr, int base, int x);
-int		ft_count_space(int base, int i);
 int		ft_hexa_flags(t_flag flags, char *str, int len);
 int		ft_hexa_precision(t_flag flags, int len);
 int		ft_hexa_width(t_flag flags, int len);
 int		ft_ptr_conv(va_list args, t_flag flags);
 char	*ft_longitoa_base(unsigned long long nbr, int base);
 int		ft_ptr_flags(t_flag flags, char *str, int len);
-int		ft_percent_conv(va_list args, t_flag flags);
+int		ft_percent_conv(t_flag flags);
 int		ft_percent_flags(t_flag flags);
 
 #endif

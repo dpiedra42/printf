@@ -6,13 +6,13 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 16:22:02 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/04 15:01:32 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/06 17:09:30 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		ft_count_space(int base, int i)
+unsigned int	ft_count_space(int base, int i)
 {
 	if (i == 0)
 		return (1);
@@ -20,7 +20,7 @@ int		ft_count_space(int base, int i)
 		return (base * ft_count_space(base, i - 1));
 }
 
-char	*ft_uitoa_base(unsigned int nbr, int base, int x)
+char			*ft_uitoa_base(unsigned int nbr, int base, int x)
 {
 	int		i;
 	char	*str;
