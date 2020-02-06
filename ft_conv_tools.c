@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/04 16:56:56 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/06 12:09:56 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ int		ft_find_conv(const char *str, va_list args, t_flag flags)
 		rtn = ft_hexa_conv(args, flags, 1);
 	if (*str == 'p')
 		rtn = ft_ptr_conv(args, flags);
+	if (*str == '%')
+		rtn = ft_percent_conv(args, flags);
 	return (rtn);
 }

@@ -1,50 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptr.c                                           :+:      :+:    :+:   */
+/*   ft_percent.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 13:43:21 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/06 11:56:17 by dpiedra          ###   ########.fr       */
+/*   Created: 2020/02/06 11:58:15 by dpiedra           #+#    #+#             */
+/*   Updated: 2020/02/06 12:09:55 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_ptr_flags(t_flag flags, char *str, int len)
+int	ft_percent_flags(t_flag flags)
 {
 	int	rtn;
 
 	rtn = 0;
 	if (flags.minus == 1)
 	{
-		ft_putstr_fd("0x", 1);
-		ft_putstr_fd(str, 1);
-		rtn += ft_fix_field(flags.width - (len + 2), ' ');
+		ft_putchar_fd('%', 1);
+		rtn += ft_fix_field(flags.width - 1, ' ');
 	}
 	else if (flags.minus == 0)
 	{
-		rtn += ft_fix_field(flags.width - (len + 2), ' ');
-		ft_putstr_fd("0x", 1);
-		ft_putstr_fd(str, 1);
+		rtn += ft_fix_field(flags.width - 1, ' ');
+		ft_putchar_fd('%', 1);
 	}
 	return (rtn);
 }
 
-int	ft_ptr_conv(va_list args, t_flag flags)
+int	ft_percent_conv(va_list args, t_flag flags)
 {
-	char				*str;
-	int					rtn;
-	int					len;
-	unsigned long long	value;
+	int	rtn;
 
 	rtn = 0;
-	value = va_arg(args, unsigned long long);
-	str = ft_longitoa_base(value, 16);
-	len = ft_strlen(str);
-	rtn += ft_ptr_flags(flags, str, len);
-	rtn += len + 2;
-	free(str);
+	rtn += ft_percent_flags(flags);
+	rtn += 1;
 	return (rtn);
 }
