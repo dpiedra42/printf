@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
+/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 16:19:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/01/31 14:22:35 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/07 15:25:31 by deannapiedr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ int	ft_str_precision(t_flag flags, char *str, int count)
 		ft_putstr_fd(str, 1);
 		return (count);
 	}
-	while (flags.precision > 0 && *str != '\0' && flags.minus == 0)
+	while (flags.precision > 0 && *str != '\0' &&
+			(flags.minus == 0 || flags.width == 0))
 	{
 		ft_putchar_fd(*str, 1);
 		flags.precision--;

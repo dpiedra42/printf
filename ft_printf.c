@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
+/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/06 17:38:46 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/07 16:20:18 by deannapiedr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_printf(const char *str, ...)
 	while (*str != '\0')
 	{
 		rtn = ft_new_putchar(*str, rtn);
-		if (*str == '%' && *str + 1 != '\0')
+		if (*str == '%' && *(str + 1) != '\0')
 		{
 			str++;
 			flags = ft_start_flags(flags);

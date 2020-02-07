@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ptr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
+/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 13:43:21 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/06 11:56:17 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/07 16:04:46 by deannapiedr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	ft_ptr_flags(t_flag flags, char *str, int len)
 	int	rtn;
 
 	rtn = 0;
-	if (flags.minus == 1)
+	if (*str == '0')
+		ft_putstr_fd("0x", 1);
+	else if (flags.minus == 1)
 	{
 		ft_putstr_fd("0x", 1);
 		ft_putstr_fd(str, 1);
@@ -44,7 +46,10 @@ int	ft_ptr_conv(va_list args, t_flag flags)
 	str = ft_longitoa_base(value, 16);
 	len = ft_strlen(str);
 	rtn += ft_ptr_flags(flags, str, len);
-	rtn += len + 2;
+	if (*str == '0')
+		rtn += 2;
+	else
+		rtn += len + 2;
 	free(str);
 	return (rtn);
 }
