@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_tools.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
+/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 11:43:45 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/06 17:07:04 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/07 14:41:55 by deannapiedr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_fix_field(int flag, char c)
 	return (rtn);
 }
 
-int		ft_find_count(int decimal)
+int		ft_find_count(long decimal)
 {
 	int count;
 

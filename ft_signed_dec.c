@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_signed_dec.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
+/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 10:56:33 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/04 11:22:46 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/07 14:41:47 by deannapiedr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_signed_precision(t_flag flags, int sign, int count)
 	return (rtn);
 }
 
-int	ft_signed_flags(t_flag flags, int decimal, int sign, int count)
+int	ft_signed_flags(t_flag flags, long decimal, int sign, int count)
 {
 	int rtn;
 
@@ -74,14 +74,14 @@ int	ft_signed_flags(t_flag flags, int decimal, int sign, int count)
 
 int	ft_signed_conv(va_list args, t_flag flags)
 {
-	int rtn;
-	int sign;
-	int count;
-	int decimal;
+	int 	rtn;
+	int 	sign;
+	int 	count;
+	long	decimal;
 
 	rtn = 0;
 	sign = 0;
-	decimal = va_arg(args, int);
+	decimal = (long)va_arg(args, int);
 	count = ft_find_count(decimal);
 	if (decimal < 0)
 	{
