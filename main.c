@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
+/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:20 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/06 17:21:53 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/07 13:21:34 by deannapiedr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int	main(void)
 
 	str = "test printf";
 	printf("CONVERSION D'ENTIER NATUREL (PTR - p)\n");
-	a = ft_printf("|1 : %p|\n", str);
-	b = printf("|1 : %p|\n", str);
+	b = printf("|1 : %%|\n");
 	printf(" Your printf returned : %i\nTheir printf returned : %i\n", a, b);
 	return (0);
 }

@@ -3,38 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
+/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 11:21:23 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/04 15:56:29 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/07 13:22:56 by deannapiedr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-int	ft_hexa_width(t_flag flags, int len)
-{
-	int rtn;
-
-	rtn = 0;
-	if (flags.zero == 1)
-		rtn = ft_fix_field(flags.width - len, '0');
-	else if (flags.precision >= len)
-		rtn += ft_fix_field(flags.width - flags.precision, ' ');
-	else
-		rtn += ft_fix_field(flags.width - len, ' ');
-	return (rtn);
-}
-
-int	ft_hexa_precision(t_flag flags, int len)
-{
-	int rtn;
-
-	rtn = 0;
-	if (flags.precision > 0)
-		rtn += ft_fix_field(flags.precision - len, '0');
-	return (rtn);
-}
 
 int	ft_hexa_flags(t_flag flags, char *str, int len)
 {
