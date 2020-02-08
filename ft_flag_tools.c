@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_tools.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deannapiedra <deannapiedra@student.42.f    +#+  +:+       +#+        */
+/*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:50 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/07 15:16:36 by deannapiedr      ###   ########.fr       */
+/*   Updated: 2020/02/08 12:56:44 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isflag(char c)
 {
-	if (ft_isdigit(c) == 1 || c == '.' || c == '*' || c == '-' || c == ' ')
+	if (ft_isdigit(c) == 1 || c == '.' || c == '*' || c == '-')
 		return (1);
 	else
 		return (0);
