@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 10:56:33 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/08 13:18:08 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/08 14:08:23 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ int	ft_signed_flags(t_flag flags, long decimal, int sign, int count)
 
 int	ft_signed_conv(va_list args, t_flag flags)
 {
-	int 	rtn;
-	int 	sign;
-	int 	count;
+	int		rtn;
+	int		sign;
+	int		count;
 	long	decimal;
 
 	rtn = 0;

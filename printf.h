@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:16:44 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/08 13:18:47 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/08 14:10:21 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int				ft_neg_precision(t_flag flags, char *str, int count);
 void			ft_putstr_fd(char *s, int fd);
 int				ft_signed_conv(va_list args, t_flag flags);
 int				ft_find_count(long decimal);
-int				ft_signed_flags(t_flag flags, long int decimal, int sign, int count);
+int				ft_signed_flags(t_flag flags, long decimal,
+				int sign, int count);
 int				ft_signed_precision(t_flag flags, int sign, int count);
 int				ft_signed_width(t_flag flags, int sign, int count);
 void			ft_putnbr_fd(long int n, int fd);

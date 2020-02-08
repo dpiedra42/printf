@@ -6,7 +6,7 @@
 /*   By: dpiedra <dpiedra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:15:35 by dpiedra           #+#    #+#             */
-/*   Updated: 2020/02/08 13:17:55 by dpiedra          ###   ########.fr       */
+/*   Updated: 2020/02/08 13:58:40 by dpiedra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int	ft_printf(const char *str, ...)
 		}
 		str++;
 	}
+	va_end(args);
 	return (rtn);
 }
